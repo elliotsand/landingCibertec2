@@ -42,6 +42,20 @@
 		left -60px
 	.owl-next	
 		right -60px	
+	@media screen and (max-width 960px)		
+		.owl-prev,
+		.owl-next	
+			position static
+		.owl-nav
+			position static
+			display flex
+			justify-content center
+			margin-top 10px
+		.owl-prev
+			margin-right 10px
+		.owl-dots
+			display none
+
 .b4-headtab-wrap
 	margin-bottom 50px
 .b4-head-tab	
@@ -52,7 +66,7 @@
 	display flex
 	align-items center
 	justify-content center
-	height 73px
+	min-height 73px
 	font-size 18px
 	font-family t-2
 	margin-left 15px
@@ -85,10 +99,27 @@
 		z-index 1
 	&:first-child
 		margin-left 0
-
+	@media screen and (max-width 768px)
+		width 32.65%
+		margin-left 1%
+		font-size 15px
+		
+		&:first-child
+			margin-left 0
+	@media screen and (max-width 480px)	
+		min-height 50px		
+		width 100%
+		margin 0
+		margin-bottom 5px
+		&:after
+			height 100% !important
+		
 .b4-headtab-inner		
 	display flex
 	justify-content center
+	@media screen and (max-width 768px)
+		flex-flow row wrap
+		padding 0 20px
 
 .b4-item-tab	
 	position absolute
@@ -99,11 +130,14 @@
 	opacity 0
 	visibility 
 	transition all .3s
+	padding 0 20px
+	box-sizing border-box
 	&.active
 		z-index 2
 		position relative
 		visibility visible
 		opacity 1
+
 .b4-inner
 	max-width 1024px
 	margin 0 auto
@@ -111,6 +145,28 @@
 	padding-bottom 100px
 	background-color #fff
 	position relative
+	background-image url(../img/tramado.png)
+	&:after
+		content ""
+		position absolute
+		top 35%
+		left 35%
+		height 13px
+		width 13px	
+		border-radius 100%
+		background-color c-4
+	&:before
+		content ""
+		position absolute
+		top 0
+		right 35%
+		border-radius 100%
+		border 2px solid c-4
+		box-sizing border-box
+		width 25px
+		height 25px
+		
+		
 
 .b4-circles-figura	
 	position absolute
@@ -119,7 +175,9 @@
 .b4-cnt-slider	
 	max-width 800px
 	margin 0 auto
-
+	
+	@media screen and (max-width 768px)
+		padding 0 20px
 
 .b4-title	
 	max-width 160px
@@ -130,6 +188,29 @@
 	color c-2
 	text-transform uppercase
 
+.b4-list-slider
+	&.desktop
+		display flex
+		flex-flow row wrap
+		justify-content center
+		.b4-item-slider	
+			margin 0
+			width 29%
+			margin-left 6%
+			&:first-child
+				margin-left 0
+		@media screen and (max-width 850px)
+			.b4-item-slider	
+				margin-left 3%
+				width 31%
+		@media screen and (max-width 745px)		
+			flex-direction column
+			align-items center
+			.b4-item-slider	
+				width 233px
+				margin-left 0
+				margin-bottom 20px
+		
 .b4-item-slider	
 	position relative
 	display block
@@ -161,3 +242,6 @@
 .b4-content-tab		
 	z-index 2
 	position relative
+	
+
+	

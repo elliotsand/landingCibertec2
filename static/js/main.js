@@ -8,8 +8,8 @@ $(function(){
 
 	/* MENU RESPONSIVE */
 	//se clona 'menu-list' para poder tener mas flexibilidad y control
-	$('.menu-list').clone().appendTo('.menu-sidebar-cnt').addClass('menu-responsive').removeClass('menu-list');
-	$('.header-logo').clone().prependTo('.menu-sidebar-cnt').removeClass('header-logo').addClass('responsive-logo');
+	$('.h-menu').clone().appendTo('.menu-sidebar-cnt').addClass('menu-responsive').removeClass('menu-list');
+	$('.h-logo').clone().prependTo('.menu-sidebar-cnt').removeClass('h-logo').addClass('responsive-logo');
 	$('.header-busqueda').clone().appendTo('.menu-sidebar-cnt');
 
 	$('.menu-mobile-open').click(function(){
@@ -108,15 +108,15 @@ $(function(){
 
 
 	// Menu responsive traslucido con scrolling
-	var altoScroll = 0
-	$(window).scroll(function() {
-		altoScroll = $(window).scrollTop();
-		if (altoScroll > 60) {
-			$('.menu-mobile-open').addClass('scrolling');
-		}else{
-			$('.menu-mobile-open').removeClass('scrolling');
-		};
-	});
+	// var altoScroll = 0
+	// $(window).scroll(function() {
+	// 	altoScroll = $(window).scrollTop();
+	// 	if (altoScroll > 60) {
+	// 		$('.menu-mobile-open').addClass('scrolling');
+	// 	}else{
+	// 		$('.menu-mobile-open').removeClass('scrolling');
+	// 	};
+	// });
 
 
 
