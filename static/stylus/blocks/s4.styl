@@ -55,9 +55,20 @@
 			margin-right 10px
 		.owl-dots
 			display none
+	&.anima
+		.b4-content-tab
+			opacity 1
+			transform translateY(0)
+		.b4-headtab-wrap
+			opacity 1
+			transform translateY(0)
+			transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;
 
 .b4-headtab-wrap
 	margin-bottom 50px
+	opacity 0
+	transform translateY(100px)
+	transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;
 .b4-head-tab	
 	color c-0
 	text-transform uppercase
@@ -242,6 +253,10 @@
 .b4-content-tab		
 	z-index 2
 	position relative
+	opacity 0
+	transform translateY(100px)
+	transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;				
+	transition-delay 0.25s
 	
 
 	

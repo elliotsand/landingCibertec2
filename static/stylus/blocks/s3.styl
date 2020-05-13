@@ -1,15 +1,54 @@
 .b3
 	background #fff url('../img/b3-img-patron.png') repeat
 	padding 50px 0 65px 0
+	padding-bottom 120px
+
+	
+	.owl-carousel .owl-stage-outer
+		overflow visible
+		
+	.owl-dots
+		position absolute
+		width 100%
+		left 0
+		bottom -100px
+		display flex
+		justify-content center
+		
+	.owl-dot
+		width 12px
+		height 12px
+		border-radius 100%
+		background-color c-0
+		margin-left 10px
+		transition all .3s
+		&.active
+			width 25px
+			border-radius 10px
+		&:first-child
+			margin-left 0
+		
+		
+	.owl-nav
+		display none
+		
 
 .b3content
-	max-width 1190px
+	max-width 1200px
+	overflow hidden
+
+.b3-cnt-slider
+	padding 0 20px
+	margin-top 30px
 
 .b3head,
 .b3foot
 	max-width 930px
 	width 100%
 	margin 0 auto
+
+.b3foot
+	margin-top 80px
 
 .b3franja
 	max-width 431px
@@ -63,6 +102,10 @@
 	position relative
 	box-sizing border-box
 	padding 27px 10px
+	img
+		max-width 100%
+		height auto
+		display block
 	&:before
 		content ""
 		width 48px
@@ -138,6 +181,14 @@
 		max-width 100%
 		height auto
 
+.b3-slider 
+	&.desktop
+		display flex
+		flex-flow row wrap
+		.b3box
+			width 17.3%
+			margin 0
+			margin-left 2.7%
 .b3curvas
 	width 73px
 	position absolute
@@ -161,3 +212,13 @@
 	img
 		max-width 100%
 		height auto
+
+@media screen and (max-width 768px)
+	.b3 .owl-dots
+		bottom -60px
+		
+@media screen and (max-width 480px)
+	.b3circle_big
+		margin-top 15px
+	.b3
+		padding-bottom 40px		

@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="static/js/owl-carousel/owl.carousel.css">
 
 
-    <link rel="stylesheet" type="text/css" href="static/css/styles.css?v=2.1"/>
-    <link rel="stylesheet" type="text/css" href="static/css/blocks_styl.css?v=2.1"/>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css?v=3.1"/>
+    <link rel="stylesheet" type="text/css" href="static/css/blocks_styl.css?v=3.1"/>
 
     <!--[if lt IE 9]>
         <script src="static/js/html5.js"></script>
@@ -169,6 +169,7 @@
   </div>  
 </section>
 <!-- BLOQUE 3 -->
+<!-- BLOQUE 3 -->
 <section class="b3">
   <div class="b3content wancho">
     <div class="b3head">
@@ -185,10 +186,10 @@
         <img src="static/img/b3-img-circle-small.png" width="11" height="11" alt="circle-small">
       </figure>
     </div>
-    <div class="b3slider">
-      <ul class="b3flex">
-        
-        <li>
+    <div class="b3-cnt-slider">
+      
+        <div class="b3-slider desktop">
+          
           <a href="" class="b3box">
             <div class="b3subtitle">
               <h3>Gestión y Negocios</h3>
@@ -208,9 +209,7 @@
               <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
             </figure>
           </a>
-        </li>
-        
-        <li>
+          
           <a href="" class="b3box">
             <div class="b3subtitle">
               <h3>Gestión y Negocios</h3>
@@ -230,9 +229,7 @@
               <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
             </figure>
           </a>
-        </li>
-        
-        <li>
+          
           <a href="" class="b3box">
             <div class="b3subtitle">
               <h3>Gestión y Negocios</h3>
@@ -252,9 +249,7 @@
               <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
             </figure>
           </a>
-        </li>
-        
-        <li>
+          
           <a href="" class="b3box">
             <div class="b3subtitle">
               <h3>Gestión y Negocios</h3>
@@ -274,9 +269,7 @@
               <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
             </figure>
           </a>
-        </li>
-        
-        <li>
+          
           <a href="" class="b3box">
             <div class="b3subtitle">
               <h3>Gestión y Negocios</h3>
@@ -296,9 +289,49 @@
               <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
             </figure>
           </a>
-        </li>
-        
-      </ul>
+          
+          <a href="" class="b3box">
+            <div class="b3subtitle">
+              <h3>Gestión y Negocios</h3>
+            </div>
+            <div class="b3images">
+              <figure class="b3img_normal">
+                <img src="static/img/disenio.png" width="50"  alt="img-normal">
+              </figure>
+              <figure class="b3img_hover">
+                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
+              </figure>
+            </div>
+            <figure class="b3curvas b3curvas_normal">
+              <img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
+            </figure>
+            <figure class="b3curvas b3curvas_hover">
+              <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
+            </figure>
+          </a>
+          
+          <a href="" class="b3box">
+            <div class="b3subtitle">
+              <h3>Gestión y Negocios</h3>
+            </div>
+            <div class="b3images">
+              <figure class="b3img_normal">
+                <img src="static/img/disenio.png" width="50"  alt="img-normal">
+              </figure>
+              <figure class="b3img_hover">
+                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
+              </figure>
+            </div>
+            <figure class="b3curvas b3curvas_normal">
+              <img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
+            </figure>
+            <figure class="b3curvas b3curvas_hover">
+              <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
+            </figure>
+          </a>
+          
+        </div>
+      
     </div>
     <div class="b3foot">
       <figure class="b3paleta">
@@ -307,8 +340,9 @@
     </div>
   </div>
 </section>
+
 <!-- b4 -->
-<section class="b4">
+<section class="b4 g3-anima">
   <div class="b4-main">
     <div class="b4-headtab-wrap">
       <div class="b4-headtab-inner">
@@ -788,7 +822,74 @@
             $('.b4-item-tab[data-tab="'+id+'"]').addClass('active');
           });
 
+// b3
+        var cantidad = $('.b3box').length;
 
+        function sliderOw(){
+            $('.b3-slider').removeClass('desktop')
+            $('.b3-slider').addClass('owl-carousel');
+            $('.b3-slider').owlCarousel({
+                loop:true,
+                margin:33,
+                nav:true,
+                autoplay:true,
+                navText:['<span class="icon-flecha2"></span>','<span class="icon-flecha"></span>'],
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:2
+                    },
+                    768:{
+                        items:3
+                    },
+                    960:{
+                        items:4,
+                    },
+                    1180:{
+                        items:5
+                    }
+                }
+            })
+        }
+
+        function destroyOw(){
+            $('.b3-slider').trigger('destroy.owl.carousel');
+            $('.b3-slider').addClass('desktop');
+            $('.b3-slider').removeClass('owl-carousel');
+        }
+
+        if (matchMedia) {
+            var mq = window.matchMedia("(max-width: 1024px)");
+            mq.addListener(WidthChange);
+            WidthChange(mq);
+        }
+
+        // media query change
+        function WidthChange(mq) {
+            if (mq.matches ) {
+                    console.log('menor a 1000px');
+                    if ($('.b3-slider').hasClass('owl-carousel')) {
+                        // console.log('slider, ya existe');
+                    }
+                    else{
+                        // console.log('slider, aun no existe')
+                        sliderOw()
+                }
+            }
+            else {
+                console.log('mayor a 1000px');
+                if (cantidad >= 6) {
+                    destroyOw()
+                    sliderOw()
+                }
+                else{
+                    destroyOw()
+                }
+            };
+        }
+          
     });
 </script>
 
