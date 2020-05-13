@@ -1,0 +1,163 @@
+.b4
+	background-color c-0
+	padding 65px 0
+	
+	.owl-dots
+		position absolute
+		width 100%
+		left 0
+		bottom -50px
+		display flex
+		justify-content center
+		
+	.owl-dot
+		width 12px
+		height 12px
+		border-radius 100%
+		background-color c-0
+		margin-left 10px
+		transition all .3s
+		&.active
+			width 25px
+			border-radius 10px
+		&:first-child
+			margin-left 0
+		
+		
+	.owl-nav
+		position absolute
+		top 45%
+		width 100%
+		left 0
+	.owl-prev,
+	.owl-next
+		position absolute
+		top 0
+		font-size 40px
+		color c-1
+		cursor pointer
+		&:hover
+			color c-2
+	.owl-prev
+		left -60px
+	.owl-next	
+		right -60px	
+.b4-headtab-wrap
+	margin-bottom 50px
+.b4-head-tab	
+	color c-0
+	text-transform uppercase
+	width 245px
+	background-color #fff
+	display flex
+	align-items center
+	justify-content center
+	height 73px
+	font-size 18px
+	font-family t-2
+	margin-left 15px
+	position relative
+	cursor pointer
+	&.active
+		&:after
+			height 125px
+			opacity 1
+	&:hover
+		&:after
+			opacity 1
+	span
+		position relative
+		z-index 2
+		width 150px
+		display block
+		text-align center
+	&:after
+		opacity 0
+		transition all .3s
+		content ""
+		position absolute
+		width 100%
+		height 73px
+		background-color c-1
+		position absolute
+		top 0
+		left 0
+		z-index 1
+	&:first-child
+		margin-left 0
+
+.b4-headtab-inner		
+	display flex
+	justify-content center
+
+.b4-item-tab	
+	position absolute
+	top 0
+	left 0
+	width 100%
+	z-index 1
+	opacity 0
+	visibility 
+	transition all .3s
+	&.active
+		z-index 2
+		position relative
+		visibility visible
+		opacity 1
+.b4-inner
+	max-width 1024px
+	margin 0 auto
+	padding 60px 0
+	padding-bottom 100px
+	background-color #fff
+	position relative
+
+.b4-circles-figura	
+	position absolute
+	bottom 20px
+	right 20px
+.b4-cnt-slider	
+	max-width 800px
+	margin 0 auto
+
+
+.b4-title	
+	max-width 160px
+	margin 0 auto
+	margin-bottom 15px
+	font-size 15px
+	font-family t-3
+	color c-2
+	text-transform uppercase
+
+.b4-item-slider	
+	position relative
+	display block
+	img
+		width 100%
+		height auto
+.b4-descripcion	
+	position absolute
+	top 0
+	left 0
+	width 100%
+	flex-direction column
+	height 100%
+	display flex
+	align-items center
+	justify-content center
+	padding 15px
+	box-sizing border-box
+	text-align center
+	figure
+		margin 0
+		margin-bottom 20px
+	p
+		color #fff
+		margin 0
+		text-transform uppercase
+		font-family t-3
+		
+.b4-content-tab		
+	z-index 2
+	position relative
