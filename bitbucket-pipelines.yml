@@ -3,7 +3,6 @@ image: node:12
 definitions:
     - step: &AWS-S3_Deploy
         name: S3-Prod Deploy
-        deployment: test
         script:
           - pipe: atlassian/aws-s3-deploy:0.2.1
             variables:
