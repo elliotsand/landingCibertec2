@@ -908,11 +908,12 @@ ul.round-padding {
 .toogle .icon {
     display: inline;
     position: absolute;
-    top: 4px;
+    top: 0;
     right: 30px;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 44px;
     color: #0094aa;
+    line-height: 40px;
 }
 
 .toogle .icon.min {
@@ -944,4 +945,22 @@ ul.round-padding {
 }
 .exp.heightCero {
     height: 0;
+}
+.is-3{
+    flex: none;
+    width: 25%;
+}
+.columns.is-multiline {
+    display: flex;
+}
+.columns.is-multiline h4 {
+    text-align: left;
+    font-size: 13px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 30px;
+
+}
+.imgAliance{
+    width: 100%;
 }
