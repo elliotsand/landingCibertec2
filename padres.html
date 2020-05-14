@@ -167,7 +167,7 @@
       <div class="testimonios mobile-padding">
         <div>
           <div class="testimonio">
-            <img src="img/testimonios1.png" alt="">
+            <img src="static/img2/testimonios1.png" alt="">
             <div class="text">
               <h2>CLASES ONLINE</h2>
               <h2 class="subtitle">Testimoniales</h2>
@@ -191,7 +191,7 @@
         </div>
         <div>
           <div class="testimonio">
-            <img src="img/testimonios2.png" alt="">
+            <img src="static/img2/testimonios2.png" alt="">
             <div class="text">
               <h2>CLASES ONLINE</h2>
               <h2 class="subtitle">Testimoniales</h2>
@@ -215,7 +215,7 @@
         </div>
         <div>
           <div class="testimonio">
-            <img src="img/testimonios3.png" alt="">
+            <img src="static/img2/testimonios3.png" alt="">
             <div class="text">
               <h2>CLASES ONLINE</h2>
               <h2 class="subtitle">Testimoniales</h2>
@@ -244,6 +244,59 @@
     </section>
     <!-- BLOQUE 3 -->
     <!-- BLOQUE 3 -->
+
+    <section class="container beneficios">
+      <div class="content max-width-500 mobile-padding">
+        <div class="toogle active" data="uno">
+          <h3 class="section-undertitle">Reprogramación de pago
+          </h3>
+          <div class="icon max">+</div>
+          <div class="icon min">-</div>
+        </div>
+        <div class="exp uno">
+          <p>De acuerdo a una previa evaluación, será posible reasignar una fecha pago mensual,
+            que mejor se le acomode al estudiante.</p>
+        </div>
+        <div class="toogle" data="dos">
+          <h3 class="section-undertitle">Fraccionamiento de mensualidad
+          </h3>
+          <div class="icon max">+</div>
+          <div class="icon min">-</div>
+        </div>
+
+        <div class="exp dos heightCero">
+          <p>Brindamos facilidades en la fracción de la deuda acumulada y su reasignación en cuotas de pago a futuro, sin cargo de intereses o gastos administrativos.
+          </p>
+
+        </div>
+
+        <div class="toogle" data="tres">
+          <h3 class="section-undertitle">Recuperación de clases Prácticas
+          </h3>
+          <div class="icon max">+</div>
+          <div class="icon min">-</div>
+        </div>
+        <div class="exp tres heightCero">
+          <p>Podrás recuperar tus clases en laboratorios, estudios especializados, entre otros. Además. Tendrás clases de afianzamiento en los cursos que necesites
+          </p>
+        </div>
+        <div class="toogle" data="cuatro">
+          <h3 class="section-undertitle">Becas
+          </h3>
+          <div class="icon max">+</div>
+          <div class="icon min">-</div>
+        </div>
+        <div class="exp cuatro heightCero">
+
+          <h4>SOCIOECONÓMICAS</h4>
+           <p> Nuestros estudiantes deben haber cursado, por lo menos, un periodo académico en Cibertec. Cursar entre el 1° y 3° ciclo académico, tener la condición de estudiante regular y un promedio ponderado mayor o igual a 15 de nota.</p>
+           <h4> BECA POR ORFANDAND</h4>
+          <p>Se exige tener la condición de estudiante regular (carga académica mínima de 20 créditos), presentar el certificado y partida de defunción del padre, madre o tutor fallecido, tener más del 50% de cursos aprobados en el periodo académico a evaluar, etc.
+
+          </p>
+        </div>
+      </div>
+    </section>
     <!-- b4 -->
 
     <section class="b4 g3-anima">
@@ -630,7 +683,7 @@
                     animateIn: 'fadeIn',
                     nav: true,
                     animateOut: 'fadeOut',
-                    navText: ['<span class="icon-arrow-thin-l"></span>', '<span class="icon-arrow-thin-r"></span>'],
+                    navText: '',
                     onInitialized: animate,
                     responsive: {
                         0: {
@@ -660,6 +713,7 @@
 
         };
         testimonios();
+
         $('.toogle').click(function () {
             data = $(this).attr('data');
             $('.toogle').removeClass('active');
@@ -672,6 +726,14 @@
                 case 'dos':
                     $('.exp').addClass('heightCero');
                     $('.exp.dos').removeClass('heightCero');
+                    break;
+                case 'tres':
+                    $('.exp').addClass('heightCero');
+                    $('.exp.tres').removeClass('heightCero');
+                    break;
+                case 'cuatro':
+                    $('.exp').addClass('heightCero');
+                    $('.exp.cuatro').removeClass('heightCero');
                     break;
             }
         });
