@@ -15,29 +15,6 @@ button {
     cursor: pointer;
 }
 
-nav {
-    margin: 25px 0 0;
-    display: flex;
-    position: absolute;
-    align-items: center;
-}
-
-nav img {
-    margin-right: 10px;
-}
-
-nav ul {
-    display: inline-flex;
-}
-
-nav li {
-    list-style: none;
-    text-align: center;
-    color: #004165;
-    font-size: 11px;
-    margin: 0 27px;
-    font-weight: bold;
-}
 
 .cont-home {
     display: flex;
@@ -820,9 +797,6 @@ fieldset input::-webkit-input-placeholder {
         display: none;
     }
 
-    nav li {
-        margin: 0 13px;
-    }
 
     .home h1, .home h1.internas {
         text-align: center;
