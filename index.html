@@ -19,8 +19,8 @@
 <link rel="stylesheet" href="static/js/validationform/validationEngine.jquery.css">
 
 
-    <link rel="stylesheet" type="text/css" href="static/css/styles.css?v=3.5"/>
-    <link rel="stylesheet" type="text/css" href="static/css/blocks_styl.css?v=3.5"/>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css?v=4.1"/>
+    <link rel="stylesheet" type="text/css" href="static/css/blocks_styl.css?v=4.2"/>
 
     <!--[if lt IE 9]>
         <script src="static/js/html5.js"></script>
@@ -67,38 +67,22 @@
             <img src="static/img/mouse-icon.png" width="20" alt="">
         </div>
     </div>
-      <div class="b1-cnt-slide">
-          <div class="b1-slider">
-              <div class="b1-itemsl">
-                <div class="b1-rectangulo">
-                  <img src="static/img/rectangulo-1.png" alt="">
-                </div>
-                <div class="b1-circle">
-                  <img src="static/img/circle-3.png" alt="">
-                </div>
-                  <div class="b1-bg" style="background-image: url(static/img/imagen-banner-1.jpg);"></div>
-              </div>
-              <div class="b1-itemsl">
-                <div class="b1-rectangulo">
-                  <img src="static/img/rectangulo-1.png" alt="">
-                </div>
-                <div class="b1-circle">
-                  <img src="static/img/circle-3.png" alt="">
-                </div>
-                  <div class="b1-bg" style="background-image: url(static/img/imagen-banner-2.jpg);"></div>
-              </div>          
-          </div>
-          <div class="b1-wrap-pager">
-              <div class="b1-progress">
-              </div>
-          </div>
-      </div>
-      <div class="b1-wrap-form">
-          <div class="b1-bgform" style="background-image: url(static/img/bg-form.jpg);"></div>
-          <div class="b1-inner">
+    <div class="b1-main-form wancho"> 
+        <div class="b1-inner">
+
+            <div class="b1-content-gracias" style="display: none">
+              <h3 class="b1-title-gracias">¡Gracias!</h3>
+              <p>
+                Nos contactaremos contigo lo antes posible.
+              </p>
+              <p>
+                #DominaLaTecnología
+              </p>
+            </div>
+            <div class="b1-content-form" >
               <h3 class="b1-title">
                   Solicita más información e inscríbete aquí  
-              </h3>
+              </h3>              
               <form action="" class="b1-formulario">
                 <div class="b1-right">
                   <div class="b1-form">
@@ -138,10 +122,44 @@
                   </div> 
 
                 </div>
-              </form>
+              </form>              
+            </div>
+
+        </div>
+
+     </div>
+    <div class="b1-content">
+      <div class="b1-cnt-slide">
+          <div class="b1-slider">
+              <div class="b1-itemsl">
+                <div class="b1-rectangulo">
+                  <img src="static/img/rectangulo-1.png" alt="">
+                </div>
+                <div class="b1-circle">
+                  <img src="static/img/circle-3.png" alt="">
+                </div>
+                  <div class="b1-bg" style="background-image: url(static/img/imagen-banner-1.jpg);"></div>
+              </div>
+              <div class="b1-itemsl">
+                <div class="b1-rectangulo">
+                  <img src="static/img/rectangulo-1.png" alt="">
+                </div>
+                <div class="b1-circle">
+                  <img src="static/img/circle-3.png" alt="">
+                </div>
+                  <div class="b1-bg" style="background-image: url(static/img/imagen-banner-2.jpg);"></div>
+              </div>          
           </div>
+          <div class="b1-wrap-pager">
+              <div class="b1-progress">
+              </div>
+          </div>
+      </div>
+      <div class="b1-wrap-form">
+          <div class="b1-bgform" style="background-image: url(static/img/bg-form.jpg);"></div>
 
       </div>
+    </div>
 </section>
 <!-- BLOQUE 2 -->
 <section class="b2 g3-anima">
@@ -688,7 +706,9 @@
       if(itemsParticipa === 1){
         $('.b2').addClass('one-item')
       }
-      // +++ SCRIPT SOLO NUMEROS EN INPUTS +++
+
+
+      // formulario
       $('.soloNumber').keypress(validateNumber);
       function validateNumber(event) {
         var key = window.event ? event.keyCode : event.which;
@@ -700,9 +720,7 @@
           return true;
         }
       };
-      // <<< end >>>
 
-      // +++ validation of form +++
       $("form").validationEngine('attach', {
         promptPosition : "topLeft",
         autoHidePrompt: true,
@@ -716,208 +734,216 @@
         var valid = $(".b1-formulario").validationEngine('validate');
         if (!valid) {
          console.log('error de envio')
+
         }
         else{
           console.log('mensaje enviado')
+          $('.b1-content-gracias').show();
+          $('.b1-content-form').hide();
+          setTimeout(function(){
+            $('.b1-content-gracias').hide();
+            $('.b1-content-form').show();
+          },3000)
         }
       });
-      // <<< END >>>
+      // formulario
 
 
-      // ANIMATION
-          
+      // animaciones
+      $(window).on('load', function(event) {
+            var animaseccion = $('.g3-anima')
+            $(animaseccion).each(function(index, el) {
+                
+                $(el).waypoint(function(direction) {
 
+                if (direction === 'down') {
+                    $(el).addClass('anima');
+                     
 
-    $(window).on('load', function(event) {
-          var animaseccion = $('.g3-anima')
-          $(animaseccion).each(function(index, el) {
-              
-              $(el).waypoint(function(direction) {
+                }else {
+                    // $(el).removeClass('anima');
 
-              if (direction === 'down') {
-                  $(el).addClass('anima');
-                   
-
-              }else {
-                  // $(el).removeClass('anima');
-
-              }
-              }, {
-                  offset:'70%'
-              });
-          });
-    });
-  
+                }
+                }, {
+                    offset:'70%'
+                });
+            });
+      });
+    // animaciones
     
+    //slider banner principal
+    var b1_slide = $('.b1-itemsl').length;
 
-          var b1_slide = $('.b1-itemsl').length;
-
-          function carruselb1() {
-              if (b1_slide >= 2) {
-                  // $('.b1-item').removeClass('carousel-desktop');
-                $('.b1-slider').addClass('owl-carousel');
-                $('.b1-slider').on('initialized.owl.carousel changed.owl.carousel', function(e) {
-                        if (!e.namespace)  {
-                            return;
-                        }
-                        var carousel = e.relatedTarget;
-                        var indexItem = carousel.relative(carousel.current()) + 1;
-                        $('.owl-this').text('0' + indexItem);
-                        
-                    }).owlCarousel({
-                      loop: true,
-                      dots: true,
-                      autoplay: true, 
-                      autoplayTimeout:4000, // time for slides changes
-                      smartSpeed: 2000, // duration of change of 1 slide
-                      responsiveClass: true,
-                      animateIn: 'fadeIn',
-                      nav:true,
-                      animateOut: 'fadeOut',
-                      navText: ['<span class="icon-arrow-thin-l"></span>', '<span class="icon-arrow-thin-r"></span>'],
-                      onInitialized: animate,
-                      responsive: {
-                          0: {
-                              items: 1
-                          }
-                      }
-                  });
-
-                  function animate(event) {
-                      $('.b1-slider .owl-item.active').find('.b1-itemsl').addClass('animate');
+    function carruselb1() {
+        if (b1_slide >= 2) {
+            // $('.b1-item').removeClass('carousel-desktop');
+          $('.b1-slider').addClass('owl-carousel');
+          $('.b1-slider').on('initialized.owl.carousel changed.owl.carousel', function(e) {
+                  if (!e.namespace)  {
+                      return;
                   }
+                  var carousel = e.relatedTarget;
+                  var indexItem = carousel.relative(carousel.current()) + 1;
+                  $('.owl-this').text('0' + indexItem);
+                  
+              }).owlCarousel({
+                loop: true,
+                dots: true,
+                autoplay: true, 
+                autoplayTimeout:4000, // time for slides changes
+                smartSpeed: 2000, // duration of change of 1 slide
+                responsiveClass: true,
+                animateIn: 'fadeIn',
+                nav:true,
+                animateOut: 'fadeOut',
+                navText: ['<span class="icon-arrow-thin-l"></span>', '<span class="icon-arrow-thin-r"></span>'],
+                onInitialized: animate,
+                responsive: {
+                    0: {
+                        items: 1
+                    }
+                }
+            });
 
-                  $('.b1-slider').on('changed.owl.carousel', function(property) {
-                      var current = property.item.index;
-                      $('.b1-slider .b1-itemsl').removeClass('animate');
-                      $(property.target).find(".owl-item").eq(current).find('.b1-itemsl').addClass('animate');
-
-                  });
-                  $('<div class="owl-leg"><span class="owl-this">01</span><span class="b1-separation">/</span><span class="owl-total">0'+ b1_slide + '</span></div>').prependTo('.b1-wrap-pager');
-              } else {
-                  $(window).on('load', function(event) {
-                      $('.b1-itemsl').addClass('animate');
-
-                      /* Act on the event */
-                  });
-              }
-
-          };
-          carruselb1();
-
-          // b4
-          $('.b4-head-tab').eq(0).addClass('active')
-          $('.b4-item-tab').eq(0).addClass('active')
-          // validatio for active slider
-          $('.b4-item-tab').each(function(index, el) {
-            var items = $(el).find('.b4-item-slider');
-            itmes = items.length;
-            if (itmes > 3) {
-              $(el).find('.b4-list-slider').addClass('b4-slider')
-              $(el).find('.b4-list-slider').removeClass('desktop')
+            function animate(event) {
+                $('.b1-slider .owl-item.active').find('.b1-itemsl').addClass('animate');
             }
-          });
 
-          
-          $('.b4-slider').addClass('owl-carousel');
-          $('.b4-slider').owlCarousel({
-              loop:true,
-              margin:50,
-              nav:true,
-              navText:['<span class="icon-arrow-thin-l"></span>','<span class="icon-arrow-thin-r"></span>'],
-              responsive:{
-                  0:{
-                      items:1
-                  },
-                  481:{
-                      items:2,
-                       margin:20
-                  },
-                  746:{
-                      items:3,
-                      margin:20
-                  },
-                  1000:{
-                      items:3
-                  }
-              }
-          })
-          $('.b4-head-tab').click(function(event) {
-            var id = $(this).attr('data-id');
-            $('.b4-head-tab').removeClass('active');
-            $(this).addClass('active');
+            $('.b1-slider').on('changed.owl.carousel', function(property) {
+                var current = property.item.index;
+                $('.b1-slider .b1-itemsl').removeClass('animate');
+                $(property.target).find(".owl-item").eq(current).find('.b1-itemsl').addClass('animate');
 
-            $('.b4-item-tab').removeClass('active');
-            $('.b4-item-tab[data-tab="'+id+'"]').addClass('active');
-          });
+            });
+            $('<div class="owl-leg"><span class="owl-this">01</span><span class="b1-separation">/</span><span class="owl-total">0'+ b1_slide + '</span></div>').prependTo('.b1-wrap-pager');
+        } else {
+            $(window).on('load', function(event) {
+                $('.b1-itemsl').addClass('animate');
+
+                /* Act on the event */
+            });
+        }
+
+    };
+    carruselb1();
+  //slider banner principal
+
+
+    // b4
+    $('.b4-head-tab').eq(0).addClass('active')
+    $('.b4-item-tab').eq(0).addClass('active')
+    // validatio for active slider
+    $('.b4-item-tab').each(function(index, el) {
+      var items = $(el).find('.b4-item-slider');
+      itmes = items.length;
+      if (itmes > 3) {
+        $(el).find('.b4-list-slider').addClass('b4-slider')
+        $(el).find('.b4-list-slider').removeClass('desktop')
+      }
+    });
+
+    
+    $('.b4-slider').addClass('owl-carousel');
+    $('.b4-slider').owlCarousel({
+        loop:true,
+        margin:50,
+        nav:true,
+        navText:['<span class="icon-arrow-thin-l"></span>','<span class="icon-arrow-thin-r"></span>'],
+        responsive:{
+            0:{
+                items:1
+            },
+            481:{
+                items:2,
+                 margin:20
+            },
+            746:{
+                items:3,
+                margin:20
+            },
+            1000:{
+                items:3
+            }
+        }
+    })
+    $('.b4-head-tab').click(function(event) {
+      var id = $(this).attr('data-id');
+      $('.b4-head-tab').removeClass('active');
+      $(this).addClass('active');
+
+      $('.b4-item-tab').removeClass('active');
+      $('.b4-item-tab[data-tab="'+id+'"]').addClass('active');
+    });
 
 // b3
-        var cantidad = $('.b3box').length;
+    var cantidad = $('.b3box').length;
 
-        function sliderOw(){
-            $('.b3-slider').removeClass('desktop')
-            $('.b3-slider').addClass('owl-carousel');
-            $('.b3-slider').owlCarousel({
-                loop:true,
-                margin:33,
-                nav:true,
-                autoplay:true,
-                navText:['<span class="icon-flecha2"></span>','<span class="icon-flecha"></span>'],
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:2
-                    },
-                    768:{
-                        items:3
-                    },
-                    960:{
-                        items:4,
-                    },
-                    1180:{
-                        items:5
-                    }
-                }
-            })
-        }
-
-        function destroyOw(){
-            $('.b3-slider').trigger('destroy.owl.carousel');
-            $('.b3-slider').addClass('desktop');
-            $('.b3-slider').removeClass('owl-carousel');
-        }
-
-        if (matchMedia) {
-            var mq = window.matchMedia("(max-width: 1024px)");
-            mq.addListener(WidthChange);
-            WidthChange(mq);
-        }
-
-        // media query change
-        function WidthChange(mq) {
-            if (mq.matches ) {
-                    console.log('menor a 1000px');
-                    if ($('.b3-slider').hasClass('owl-carousel')) {
-                        // console.log('slider, ya existe');
-                    }
-                    else{
-                        // console.log('slider, aun no existe')
-                        sliderOw()
+    function sliderOw(){
+        $('.b3-slider').removeClass('desktop')
+        $('.b3-slider').addClass('owl-carousel');
+        $('.b3-slider').owlCarousel({
+            loop:true,
+            margin:33,
+            nav:true,
+            autoplay:true,
+            navText:['<span class="icon-flecha2"></span>','<span class="icon-flecha"></span>'],
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                768:{
+                    items:3
+                },
+                960:{
+                    items:4,
+                },
+                1180:{
+                    items:5
                 }
             }
-            else {
-                console.log('mayor a 1000px');
-                if (cantidad >= 6) {
-                    destroyOw()
-                    sliderOw()
+        })
+    }
+
+    function destroyOw(){
+        $('.b3-slider').trigger('destroy.owl.carousel');
+        $('.b3-slider').addClass('desktop');
+        $('.b3-slider').removeClass('owl-carousel');
+    }
+
+    if (matchMedia) {
+        var mq = window.matchMedia("(max-width: 1024px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+    }
+
+    // media query change
+    function WidthChange(mq) {
+        if (mq.matches ) {
+            $('.b1-inner').appendTo('.b1-wrap-form');
+                console.log('menor a 1024px');
+                if ($('.b3-slider').hasClass('owl-carousel')) {
+                    // console.log('slider, ya existe');
                 }
                 else{
-                    destroyOw()
-                }
-            };
+                    // console.log('slider, aun no existe')
+                    sliderOw()
+              }
         }
+        else {
+          $('.b1-inner').appendTo('.b1-main-form');
+            console.log('mayor a 1000px');
+            if (cantidad >= 6) {
+                destroyOw()
+                sliderOw()
+            }
+            else{
+                destroyOw()
+            }
+        };
+    }
           
     });
 </script>
