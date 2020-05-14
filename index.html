@@ -16,10 +16,11 @@
     
 <link rel="stylesheet" href="static/css/animate.css">
 <link rel="stylesheet" href="static/js/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="static/js/validationform/validationEngine.jquery.css">
 
 
-    <link rel="stylesheet" type="text/css" href="static/css/styles.css?v=3.2"/>
-    <link rel="stylesheet" type="text/css" href="static/css/blocks_styl.css?v=3.3"/>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css?v=3.5"/>
+    <link rel="stylesheet" type="text/css" href="static/css/blocks_styl.css?v=3.5"/>
 
     <!--[if lt IE 9]>
         <script src="static/js/html5.js"></script>
@@ -66,76 +67,81 @@
             <img src="static/img/mouse-icon.png" width="20" alt="">
         </div>
     </div>
-    <div class="b1-cnt-slide">
-        <div class="b1-slider">
-            <div class="b1-itemsl">
-              <div class="b1-rectangulo">
-                <img src="static/img/rectangulo-1.png" alt="">
-              </div>
-              <div class="b1-circle">
-                <img src="static/img/circle-3.png" alt="">
-              </div>
-                <div class="b1-bg" style="background-image: url(static/img/imagen-banner-1.jpg);"></div>
-            </div>
-            <div class="b1-itemsl">
-              <div class="b1-rectangulo">
-                <img src="static/img/rectangulo-1.png" alt="">
-              </div>
-              <div class="b1-circle">
-                <img src="static/img/circle-3.png" alt="">
-              </div>
-                <div class="b1-bg" style="background-image: url(static/img/imagen-banner-2.jpg);"></div>
-            </div>          
-        </div>
-        <div class="b1-wrap-pager">
-            <div class="b1-progress">
-            </div>
-        </div>
-    </div>
-    <div class="b1-wrap-form">
-        <div class="b1-bgform" style="background-image: url(static/img/bg-form.jpg);"></div>
-        <div class="b1-inner">
-            <h3 class="b1-title">
-                Solicita más información e inscríbete aquí  
-            </h3>
-            <form action="">
-              <div class="b1-right">
-                <div class="b1-form">
-                    <div class="g0-input">
-                        <input type="text" placeholder="Nombre*">
-                    </div>
-                    <div class="g0-input">
-                        <input type="text" placeholder="Apellido*">
-                    </div>
-                    <div class="g0-input">
-                        <input type="text" placeholder="Grado">
-                    </div>
-                    <div class="g0-input">
-                        <input type="text" placeholder="Colegio">
-                    </div>                                              
-                    <div class="g0-input">
-                        <input type="text" placeholder="Celular">
-                    </div>                                                              
-                </div>                
-                <div class="g0-check">
-                    <input type="checkbox" name="checkbox" id="terminos-condiciones" class="validate[required]">
-                    <label for="terminos-condiciones">
-                        <span class="g0-check_icon"></span>
-                        <div class="g0-check_text">
-                            <p>Acepto <a href="">términos y condiciones y políticas de privacidad.</a></p>
-                        </div>
-                    </label>
+      <div class="b1-cnt-slide">
+          <div class="b1-slider">
+              <div class="b1-itemsl">
+                <div class="b1-rectangulo">
+                  <img src="static/img/rectangulo-1.png" alt="">
                 </div>
-                <div class="g0-required">(*)Todos los campos son obligatorios</div>
-                <div class="g0-cnt-btn center">
-                    <button type="submit" class="g0-btn">Enviar</button>
-                </div> 
-
+                <div class="b1-circle">
+                  <img src="static/img/circle-3.png" alt="">
+                </div>
+                  <div class="b1-bg" style="background-image: url(static/img/imagen-banner-1.jpg);"></div>
               </div>
-            </form>
-        </div>
+              <div class="b1-itemsl">
+                <div class="b1-rectangulo">
+                  <img src="static/img/rectangulo-1.png" alt="">
+                </div>
+                <div class="b1-circle">
+                  <img src="static/img/circle-3.png" alt="">
+                </div>
+                  <div class="b1-bg" style="background-image: url(static/img/imagen-banner-2.jpg);"></div>
+              </div>          
+          </div>
+          <div class="b1-wrap-pager">
+              <div class="b1-progress">
+              </div>
+          </div>
+      </div>
+      <div class="b1-wrap-form">
+          <div class="b1-bgform" style="background-image: url(static/img/bg-form.jpg);"></div>
+          <div class="b1-inner">
+              <h3 class="b1-title">
+                  Solicita más información e inscríbete aquí  
+              </h3>
+              <form action="" class="b1-formulario">
+                <div class="b1-right">
+                  <div class="b1-form">
+                      <div class="g0-input">
+                          <input type="text" class="validate[required]" placeholder="Nombre*">
+                      </div>
+                      <div class="g0-input">
+                          <input type="text" class="validate[required]" placeholder="Apellido*">
+                      </div>
+                      <div class="g0-input g0-select">
+                        <select name="" class="validate[required]">
+                          <option value="">Grado</option>
+                          <option value="4to de Secundaria">4to de Secundaria</option>
+                          <option value="5to de Secundaria">5to de Secundaria</option>
+                        </select>
+                         
+                      </div>
+                      <div class="g0-input">
+                          <input type="text" class="validate[required]" placeholder="Colegio">
+                      </div>                                              
+                      <div class="g0-input">
+                          <input type="text" class="validate[required, custom[phone]] soloNumber" placeholder="Celular" maxlength="9">
+                      </div>                                                              
+                  </div>                
+                  <div class="g0-check">
+                      <input checked type="checkbox" name="checkbox" id="terminos-condiciones" class="validate[required]">
+                      <label for="terminos-condiciones">
+                          <span class="g0-check_icon"></span>
+                          <div class="g0-check_text">
+                              <p>Acepto <a href="">términos y condiciones y políticas de privacidad.</a></p>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="g0-required">(*)Todos los campos son obligatorios</div>
+                  <div class="g0-cnt-btn center">
+                      <button type="submit" class="g0-btn b1-enviar">Enviar</button>
+                  </div> 
 
-    </div>
+                </div>
+              </form>
+          </div>
+
+      </div>
 </section>
 <!-- BLOQUE 2 -->
 <section class="b2 g3-anima">
@@ -153,6 +159,7 @@
       </div>
     </div>
   </div>
+  
   <div class="b2-item">
     <div class="b2-reto-bg b2-bg" style="background-image: url(static/img/participa-2.jpg);"></div>
     <div class="b2-text reto">
@@ -169,8 +176,7 @@
   </div>  
 </section>
 <!-- BLOQUE 3 -->
-<!-- BLOQUE 3 -->
-<section class="b3">
+<section class="b3 g3-anima">
   <div class="b3content wancho">
     <div class="b3head">
       <figure class="b3franja">
@@ -189,17 +195,54 @@
     <div class="b3-cnt-slider">
       
         <div class="b3-slider desktop">
-          
+					<a href="" class="b3box">
+						<div class="b3subtitle">
+							<h3>Gestión y Negocios</h3>
+						</div>
+						<div class="b3images">
+							<figure class="b3img_normal">
+                <img src="static/img/gestion.png" width="50" alt="img-hover">
+							</figure>
+							<figure class="b3img_hover">
+                <img src="static/img/gestion-hover.png" width="50"  alt="img-normal">
+							</figure>
+						</div>
+						<figure class="b3curvas b3curvas_normal">
+							<img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
+						</figure>
+						<figure class="b3curvas b3curvas_hover">
+							<img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
+						</figure>
+					</a>
+					<a href="" class="b3box">
+						<div class="b3subtitle">
+							<h3>Comunicaciones</h3>
+						</div>
+						<div class="b3images">
+							<figure class="b3img_normal">
+								<img src="static/img/comunicaciones.png" width="50"  alt="img-normal">
+							</figure>
+							<figure class="b3img_hover">
+								<img src="static/img/comunicaciones-hover.png" width="50" alt="img-hover">
+							</figure>
+						</div>
+						<figure class="b3curvas b3curvas_normal">
+							<img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
+						</figure>
+						<figure class="b3curvas b3curvas_hover">
+							<img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
+						</figure>
+					</a>
           <a href="" class="b3box">
             <div class="b3subtitle">
-              <h3>Gestión y Negocios</h3>
+              <h3>Ingeniería</h3>
             </div>
             <div class="b3images">
               <figure class="b3img_normal">
-                <img src="static/img/disenio.png" width="50"  alt="img-normal">
+                <img src="static/img/ingenieria.png" width="50"  alt="img-normal">
               </figure>
               <figure class="b3img_hover">
-                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
+                <img src="static/img/ingenieria-hover.png" width="50" alt="img-hover">
               </figure>
             </div>
             <figure class="b3curvas b3curvas_normal">
@@ -209,127 +252,64 @@
               <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
             </figure>
           </a>
-          
-          <a href="" class="b3box">
-            <div class="b3subtitle">
-              <h3>Gestión y Negocios</h3>
-            </div>
-            <div class="b3images">
-              <figure class="b3img_normal">
-                <img src="static/img/disenio.png" width="50"  alt="img-normal">
-              </figure>
-              <figure class="b3img_hover">
-                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
-              </figure>
-            </div>
-            <figure class="b3curvas b3curvas_normal">
-              <img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
-            </figure>
-            <figure class="b3curvas b3curvas_hover">
-              <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
-            </figure>
-          </a>
-          
-          <a href="" class="b3box">
-            <div class="b3subtitle">
-              <h3>Gestión y Negocios</h3>
-            </div>
-            <div class="b3images">
-              <figure class="b3img_normal">
-                <img src="static/img/disenio.png" width="50"  alt="img-normal">
-              </figure>
-              <figure class="b3img_hover">
-                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
-              </figure>
-            </div>
-            <figure class="b3curvas b3curvas_normal">
-              <img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
-            </figure>
-            <figure class="b3curvas b3curvas_hover">
-              <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
-            </figure>
-          </a>
-          
-          <a href="" class="b3box">
-            <div class="b3subtitle">
-              <h3>Gestión y Negocios</h3>
-            </div>
-            <div class="b3images">
-              <figure class="b3img_normal">
-                <img src="static/img/disenio.png" width="50"  alt="img-normal">
-              </figure>
-              <figure class="b3img_hover">
-                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
-              </figure>
-            </div>
-            <figure class="b3curvas b3curvas_normal">
-              <img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
-            </figure>
-            <figure class="b3curvas b3curvas_hover">
-              <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
-            </figure>
-          </a>
-          
-          <a href="" class="b3box">
-            <div class="b3subtitle">
-              <h3>Gestión y Negocios</h3>
-            </div>
-            <div class="b3images">
-              <figure class="b3img_normal">
-                <img src="static/img/disenio.png" width="50"  alt="img-normal">
-              </figure>
-              <figure class="b3img_hover">
-                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
-              </figure>
-            </div>
-            <figure class="b3curvas b3curvas_normal">
-              <img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
-            </figure>
-            <figure class="b3curvas b3curvas_hover">
-              <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
-            </figure>
-          </a>
-          
-          <a href="" class="b3box">
-            <div class="b3subtitle">
-              <h3>Gestión y Negocios</h3>
-            </div>
-            <div class="b3images">
-              <figure class="b3img_normal">
-                <img src="static/img/disenio.png" width="50"  alt="img-normal">
-              </figure>
-              <figure class="b3img_hover">
-                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
-              </figure>
-            </div>
-            <figure class="b3curvas b3curvas_normal">
-              <img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
-            </figure>
-            <figure class="b3curvas b3curvas_hover">
-              <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
-            </figure>
-          </a>
-          
-          <a href="" class="b3box">
-            <div class="b3subtitle">
-              <h3>Gestión y Negocios</h3>
-            </div>
-            <div class="b3images">
-              <figure class="b3img_normal">
-                <img src="static/img/disenio.png" width="50"  alt="img-normal">
-              </figure>
-              <figure class="b3img_hover">
-                <img src="static/img/disenio-hover.png" width="50" alt="img-hover">
-              </figure>
-            </div>
-            <figure class="b3curvas b3curvas_normal">
-              <img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
-            </figure>
-            <figure class="b3curvas b3curvas_hover">
-              <img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
-            </figure>
-          </a>
-          
+
+					<a href="" class="b3box">
+						<div class="b3subtitle">
+							<h3>Tecnologías de la información</h3>
+						</div>
+						<div class="b3images">
+							<figure class="b3img_normal">
+								<img src="static/img/tecnologia.png" width="50"  alt="img-normal">
+							</figure>
+							<figure class="b3img_hover">
+								<img src="static/img/tecnologia-hover.png" width="50" alt="img-hover">
+							</figure>
+						</div>
+						<figure class="b3curvas b3curvas_normal">
+							<img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
+						</figure>
+						<figure class="b3curvas b3curvas_hover">
+							<img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
+						</figure>
+					</a>
+					<a href="" class="b3box">
+						<div class="b3subtitle">
+							<h3>Ingeniería</h3>
+						</div>
+						<div class="b3images">
+							<figure class="b3img_normal">
+								<img src="static/img/ingenieria.png" width="50"  alt="img-normal">
+							</figure>
+							<figure class="b3img_hover">
+								<img src="static/img/ingenieria-hover.png" width="50" alt="img-hover">
+							</figure>
+						</div>
+						<figure class="b3curvas b3curvas_normal">
+							<img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
+						</figure>
+						<figure class="b3curvas b3curvas_hover">
+							<img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
+						</figure>
+					</a>
+					<a href="" class="b3box">
+						<div class="b3subtitle">
+							<h3>Diseño</h3>
+						</div>
+						<div class="b3images">
+							<figure class="b3img_normal">
+								<img src="static/img/disenio.png" width="50"  alt="img-normal">
+							</figure>
+							<figure class="b3img_hover">
+								<img src="static/img/disenio-hover.png" width="50" alt="img-hover">
+							</figure>
+						</div>
+						<figure class="b3curvas b3curvas_normal">
+							<img src="static/img/b3-img-curvas-normal.png" width="73" height="76" alt="img-normal">
+						</figure>
+						<figure class="b3curvas b3curvas_hover">
+							<img src="static/img/b3-img-curvas-hover.png" width="73" height="76" alt="img-hover">
+						</figure>
+					</a>
         </div>
       
     </div>
@@ -701,8 +681,54 @@
     
 <script src="static/js/owl-carousel/owl.carousel.js"></script>
 <script src="static/js/jquery.waypoints.js"></script>
+<script src="static/js/validationform/jquery.validationEngine.js"></script>
 <script type="text/javascript">
     $(function(){
+      var itemsParticipa = $('.b2-item').length;
+      if(itemsParticipa === 1){
+        $('.b2').addClass('one-item')
+      }
+      // +++ SCRIPT SOLO NUMEROS EN INPUTS +++
+      $('.soloNumber').keypress(validateNumber);
+      function validateNumber(event) {
+        var key = window.event ? event.keyCode : event.which;
+        if (event.keyCode === 8 || event.keyCode === 46) {
+          return true;
+        } else if ( key < 48 || key > 57 ) {
+          return false;
+        } else {
+          return true;
+        }
+      };
+      // <<< end >>>
+
+      // +++ validation of form +++
+      $("form").validationEngine('attach', {
+        promptPosition : "topLeft",
+        autoHidePrompt: true,
+        autoHideDelay: 3000,
+        binded: false,
+        scroll: false
+      });
+
+      $('.b1-enviar').on('click', function(event) {
+        event.preventDefault();
+        var valid = $(".b1-formulario").validationEngine('validate');
+        if (!valid) {
+         console.log('error de envio')
+        }
+        else{
+          console.log('mensaje enviado')
+        }
+      });
+      // <<< END >>>
+
+
+      // ANIMATION
+          
+
+
+    $(window).on('load', function(event) {
           var animaseccion = $('.g3-anima')
           $(animaseccion).each(function(index, el) {
               
@@ -720,6 +746,9 @@
                   offset:'70%'
               });
           });
+    });
+  
+    
 
           var b1_slide = $('.b1-itemsl').length;
 
