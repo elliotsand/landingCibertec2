@@ -234,11 +234,15 @@ p.article-paragraph {
 .carreras {
     background-image: url(../img2/bg-carreras.png);
     background-position: center;
-    padding: 70px 0 100px;
+    padding: 70px 0 40px;
     background-repeat: no-repeat;
     background-size: contain;
     width: 94%;
     margin: 0 auto 100px;
+}
+
+.carreras .owl-dots {
+    bottom: -30px !important;
 }
 
 .carrera {
@@ -418,8 +422,9 @@ p.article-paragraph {
     padding: 14px 0;
     cursor: pointer;
 }
-.btn-verde.home{
-    margin: 20px 40px 20px;
+
+.btn-verde.home {
+    margin: 20px auto 20px;
     width: 250px;
     text-align: center;
     font-size: 27px;
@@ -802,6 +807,7 @@ fieldset input::-webkit-input-placeholder {
     .mobile-mb-25 {
         margin-bottom: 25px;
     }
+
     .mobile-mb-10 {
         margin-bottom: 10px;
     }
@@ -840,7 +846,7 @@ fieldset input::-webkit-input-placeholder {
     }
 
     .carreras {
-        margin: auto;
+        margin: 0 auto 69px;
         width: 100%;
     }
 
@@ -898,7 +904,8 @@ ul.round-padding {
     border-radius: 22px;
     margin-bottom: 15px;
     position: relative;
-    cursor : pointer;
+    cursor: pointer;
+    width: 100%;
 }
 
 .toogle h3 {
@@ -931,36 +938,65 @@ ul.round-padding {
 .toogle:hover {
     background: #0094aa;
 }
-.toogle:hover h3{
+
+.toogle:hover h3 {
     color: #fff
 }
 
-.toogle:hover .icon{
+.toogle:hover .icon {
     color: #fff
 }
+
 .exp {
     overflow: hidden;
     height: auto;
     transition: .5s all;
 }
+
 .exp.heightCero {
     height: 0;
 }
-.is-3{
+
+.is-3 {
     flex: none;
     width: 25%;
 }
+
 .columns.is-multiline {
     display: flex;
 }
+
 .columns.is-multiline h4 {
-    text-align: left;
+    text-align: center;
     font-size: 13px;
     padding-left: 10%;
     padding-right: 10%;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
 
 }
-.imgAliance{
+
+.imgAliance {
     width: 100%;
+}
+
+.textalingCenter {
+    text-align: center;
+}
+.b3-head{
+    margin: 50px 0 0 0;
+}
+@media screen and (max-width: 1024px) {
+
+    .is-3 {
+        flex: none;
+        width: 40%;
+        margin: 0 4.5%;
+        display: inline-table;
+    }
+
+    .columns.is-multiline {
+        display: block;
+    }
 }
