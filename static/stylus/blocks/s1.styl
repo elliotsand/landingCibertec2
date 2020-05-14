@@ -1,6 +1,4 @@
 .b1
-	display flex
-	flex-flow row wrap
 	position relative
 	overflow hidden
 	.g0-cnt-btn
@@ -62,6 +60,33 @@
 		.b1-scroll
 			opacity 1
 			transform translateY(0px)		
+
+.b1-title-gracias
+	font-size 30px
+	font-family t-1
+	margin-bottom 20px	
+	text-align center
+
+.b1-content-gracias
+	text-align center
+	p
+		margin-bottom 0
+		font-size 20px
+
+.b1-content
+	display flex
+	flex-flow row wrap	
+
+.b1-main-form
+	position relative
+	.b1-inner
+		position absolute
+		right 0
+		top calc(((100vh / 2) - 80px) - 30vh)
+
+	@media screen and (max-height 670px)
+		.g0-input
+			margin-bottom 15px 		
 			
 .b1-rectangulo
 	position absolute

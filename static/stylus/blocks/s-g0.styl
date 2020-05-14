@@ -79,10 +79,11 @@
 	padding-left 25px
 .g0-input	
 	margin-bottom 25px
+	position relative
 	placeholder(c-0,t-0)
 	&:last-child
 		margin-bottom 0
-	input	
+	input, select	
 		width 100%
 		height 42px
 		line-height 42px
@@ -92,6 +93,35 @@
 		border 1px solid c-0
 		border-radius 20px
 		background none
+	select
+		appearance none
+.g0-select
+	position relative
+	&:after
+		content "\e608"
+		display inline-block
+		color c-7
+		font-family icomoon
+		font-size 20px
+		pointer-events none
+		transform translateY(-50%)
+		position absolute
+		top 50%
+		right 13px
+// +++ style validation +++
+.formError
+	z-index: 90
+	.formErrorContent,
+	.formErrorArrow div
+		background-color c-0
+		color #fff
+		border none
+		font-size 12px
+		font-family t-0
+		box-shadow none
+	.formErrorArrow
+		.line1,.line2,.line3
+			display none
 		
 
 @media screen and (max-width 768px)	

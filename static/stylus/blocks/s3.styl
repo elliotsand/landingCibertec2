@@ -31,8 +31,18 @@
 		
 	.owl-nav
 		display none
-		
-
+	&.anima
+		.b3franja
+			opacity 1
+			transform translateX(0)
+		.b3title
+			opacity 1
+			transform translateX(0)
+		.b3-cnt-slider
+			opacity 1
+			transform translateX(0)
+			
+			
 .b3content
 	max-width 1200px
 	overflow hidden
@@ -40,6 +50,10 @@
 .b3-cnt-slider
 	padding 0 20px
 	margin-top 30px
+	opacity 0
+	transform translateX(-200px)
+	transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;
+	transition-delay .5s
 
 .b3head,
 .b3foot
@@ -54,11 +68,18 @@
 	max-width 431px
 	width 100%
 	margin 0 0 60px auto
+	opacity 0
+	transform translateX(-200px)
+	transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;
 	img
 		max-width 100%
 		height auto
 
 .b3title
+	opacity 0
+	transform translateX(200px)
+	transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;
+	transition-delay .3s
 	h2
 		line-height 1
 		color c-0
@@ -90,6 +111,7 @@
 .b3flex
 	display flex
 	flex-flow row wrap
+	
 	li
 		width 20%
 
@@ -149,6 +171,7 @@
 
 .b3subtitle
 	margin-bottom 30px
+	min-height 45px
 	h3
 		line-height 1.1
 		color c-0
