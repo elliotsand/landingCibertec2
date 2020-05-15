@@ -868,7 +868,7 @@ ul.round-padding {
     margin: 0 40px;
 }
 
-ul.round-padding li{
+ul.round-padding li {
     list-style: disc;
 }
 
@@ -962,7 +962,8 @@ ul.round-padding li{
 .columns.is-multiline {
     display: flex;
 }
-.columns.is-multiline img{
+
+.columns.is-multiline img {
     margin: 20px auto 25px;
     display: block;
 }
@@ -991,9 +992,6 @@ ul.round-padding li{
 }
 
 @media screen and (max-width: 1024px) {
-    .toogle{
-
-    }
     .is-3 {
         flex: none;
         width: 40%;
@@ -1005,19 +1003,22 @@ ul.round-padding li{
         display: block;
     }
 }
-@media screen and (max-width: 480px) {
-    .toogle{
 
-    }
+@media screen and (max-width: 480px) {
     .is-3 {
         flex: none;
         width: 100%;
-        margin: 0 ;
+        margin: 0;
         display: inline-table;
     }
 
     .columns.is-multiline {
         display: block;
+    }
+
+    .carrera .cover p {
+        top: 140px;
+        font-size: 20px;
     }
 }
 
@@ -1026,4 +1027,8 @@ h2 {
     font-size: 55px;
     line-height: 1;
     font-weight: bold;
+}
+
+.convenios {
+
 }
