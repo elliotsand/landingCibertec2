@@ -271,12 +271,12 @@
               </div>
             </div>
           </div>
-          <div class="toogle" data="dos">
+          <div class="toogle active" data="dos">
             <h3 class="section-undertitle">Convenios Internacionales</h3>
             <div class="icon max">+</div>
             <div class="icon min">-</div>
           </div>
-          <div class="exp dos heightCero">
+          <div class="exp dos">
             <div class="columns is-multiline">
               <div class="column is-3 has-text-centered">
                 <img src="https://www.cibertec.edu.pe/wp-content/uploads/2019/08/tompkings.png" alt="">
@@ -1154,7 +1154,7 @@
                             items: 2
                         },
                         960: {
-                            items: 3,
+                            items: 2,
                         }
                     }
                 });
@@ -1180,21 +1180,7 @@
 
         };
         carreras();
-        $('.toogle').click(function () {
-            data = $(this).attr('data');
-            $('.toogle').removeClass('active');
-            $(this).addClass('active');
-            switch (data) {
-                case 'uno':
-                    $('.exp').addClass('heightCero');
-                    $('.exp.uno').removeClass('heightCero');
-                    break;
-                case 'dos':
-                    $('.exp').addClass('heightCero');
-                    $('.exp.dos').removeClass('heightCero');
-                    break;
-            }
-        });
+
         $("#scrolltop").click(function(){
             $('html, body').animate({
                 scrollTop: $(".b1-inner").offset().top -100

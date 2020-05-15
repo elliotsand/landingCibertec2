@@ -218,7 +218,8 @@ p.article-paragraph {
     padding: 70px 0 40px;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 94%;
+    max-width: 900px;
+    overflow: hidden;
     margin: 0 auto 100px;
 }
 
@@ -884,12 +885,17 @@ ul.round-padding li{
 .toogle {
     border: 1px solid #0094aa;
     border-radius: 22px;
-    margin-bottom: 15px;
-    margin-top: 45px;
+    margin-bottom: 30px;
+    margin-top: 80px;
     position: relative;
     cursor: pointer;
     width: 100%;
 }
+
+.toogle.active {
+    margin-bottom: 80px;
+}
+
 
 .toogle h3 {
     margin: 12px auto !important;
@@ -990,4 +996,11 @@ ul.round-padding li{
     .columns.is-multiline {
         display: block;
     }
+}
+
+h2 {
+    margin: 60px 0;
+    font-size: 55px;
+    line-height: 1;
+    font-weight: bold;
 }
