@@ -942,6 +942,7 @@ ul.round-padding li{
 }
 
 .exp {
+    width: 100%;
     overflow: hidden;
     height: auto;
     transition: .5s all;
@@ -955,10 +956,15 @@ ul.round-padding li{
 .is-3 {
     flex: none;
     width: 25%;
+    place-self: center;
 }
 
 .columns.is-multiline {
     display: flex;
+}
+.columns.is-multiline img{
+    margin: 0 auto 25px;
+    display: block;
 }
 
 .columns.is-multiline h4 {
