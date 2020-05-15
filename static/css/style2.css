@@ -10,6 +10,9 @@ a {
     text-decoration: none;
     color: #004165;
 }
+p {
+    font-size: 20px;
+}
 
 button {
     cursor: pointer;
@@ -877,24 +880,30 @@ ul.round-padding {
     border: 1px solid #0094aa;
     border-radius: 22px;
     margin-bottom: 15px;
+    margin-top: 45px;
     position: relative;
     cursor: pointer;
     width: 100%;
 }
 
 .toogle h3 {
-    margin: 12px 0 !important;
+    margin: 12px auto !important;
+    font-size: 28px;
+    max-width: 70%;
+    display: block;
 }
 
 .toogle .icon {
     display: inline;
     position: absolute;
-    top: 0;
+    top: 50%;
+    height: 30px;
     right: 30px;
     font-weight: 900;
     font-size: 44px;
     color: #0094aa;
-    line-height: 40px;
+    line-height: 30px;
+    transform: translate(0px, -50%);
 }
 
 .toogle .icon.min {
@@ -925,6 +934,7 @@ ul.round-padding {
     overflow: hidden;
     height: auto;
     transition: .5s all;
+    margin: 15px 0;
 }
 
 .exp.heightCero {
@@ -942,7 +952,7 @@ ul.round-padding {
 
 .columns.is-multiline h4 {
     text-align: center;
-    font-size: 13px;
+    font-size: 20px;
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 15px;
