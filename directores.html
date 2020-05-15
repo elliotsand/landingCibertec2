@@ -174,17 +174,18 @@
             Alianza Educativa
             <span class="puntos"></span>
           </h2>
-
-
-
         </div>
-        <figure class="b3circle_big">
-          <img src="static/img/b3-img-circle-big.png" width="39" height="39" alt="circle-big">
+        <figure class="b3circle_small">
+          <img src="static/img/b3-img-circle-small.png" width="11" height="11" alt="circle-small">
         </figure>
         <div class="mobile-column-center">
           <p>Nuestro programa  con más de 18 años de trayectoria, tiene por finalidad brindar una formación integral a niños y jóvenes para que obtengan mejores oportunidades y se encuentren preparados para la vida.
             Actualmente contamos con más de +470,000 estudiantes.
           </p>
+
+          <figure class="b3circle_big">
+            <img src="static/img/b3-img-circle-big.png" width="39" height="39" alt="circle-big">
+          </figure>
           <h2>Programas</h2>
           <ul class="round-padding">
             <li>Tecnología
@@ -195,6 +196,10 @@
             <li> Saludo</li>
             <li>  Arte y creatividad</li>
           </ul>
+
+          <figure class="b3circle_small">
+            <img src="static/img/b3-img-circle-small.png" width="11" height="11" alt="circle-small">
+          </figure>
           <h2>Beneficios </h2>
           <ul class="round-padding">
             <li>Capacitación a docentes en otras asignaturas</li>
@@ -202,7 +207,10 @@
             <li> Acceso al programa de Formación Continua a toda la comunidad educativa.
             </li>
           </ul>
-          <a class="btn-verde home " id="scrollDownBttn">Inscríbete aquí</a>
+          <a class="btn-verde home " id="scrolltop">Inscríbete aquí</a>
+          <figure class="b3circle_big">
+            <img src="static/img/b3-img-circle-big.png" width="39" height="39" alt="circle-big">
+          </figure>
         </div>
       </div>
     </section>
@@ -707,6 +715,11 @@
                     $('.exp.dos').removeClass('heightCero');
                     break;
             }
+        });
+        $("#scrolltop").click(function(){
+            $('html, body').animate({
+                scrollTop: $(".b1-formulario").offset().top
+            }, 500);
         });
     });
 </script>

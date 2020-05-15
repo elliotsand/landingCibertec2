@@ -10,6 +10,7 @@ a {
     text-decoration: none;
     color: #004165;
 }
+
 p {
     font-size: 20px;
 }
@@ -273,7 +274,7 @@ p.article-paragraph {
 }
 
 .testimonios {
-
+    margin: 100px 0;
 }
 
 .testimonio {
@@ -866,6 +867,10 @@ ul.round-padding {
     margin: 0 40px;
 }
 
+ul.round-padding li{
+    list-style: disc;
+}
+
 .hidden {
     display: none;
 }
@@ -968,9 +973,11 @@ ul.round-padding {
 .textalingCenter {
     text-align: center;
 }
-.b3-head{
+
+.b3-head {
     margin: 50px 0 0 0;
 }
+
 @media screen and (max-width: 1024px) {
 
     .is-3 {
