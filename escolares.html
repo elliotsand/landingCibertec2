@@ -1230,10 +1230,16 @@
                 case 'uno':
                     $('.exp').addClass('heightCero');
                     $('.exp.uno').removeClass('heightCero');
+                    $('html, body').animate({
+                        scrollTop: $(".toogle.uno").offset().top - 10
+                    }, 500);
                     break;
                 case 'dos':
                     $('.exp').addClass('heightCero');
                     $('.exp.dos').removeClass('heightCero');
+                    $('html, body').animate({
+                    scrollTop: $(".toogle.dos").offset().top - 10
+                }, 500);
                     break;
             }
         });

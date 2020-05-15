@@ -963,7 +963,7 @@ ul.round-padding li{
     display: flex;
 }
 .columns.is-multiline img{
-    margin: 0 auto 25px;
+    margin: 20px auto 25px;
     display: block;
 }
 
@@ -991,11 +991,28 @@ ul.round-padding li{
 }
 
 @media screen and (max-width: 1024px) {
+    .toogle{
 
+    }
     .is-3 {
         flex: none;
         width: 40%;
         margin: 0 4.5%;
+        display: inline-table;
+    }
+
+    .columns.is-multiline {
+        display: block;
+    }
+}
+@media screen and (max-width: 480px) {
+    .toogle{
+
+    }
+    .is-3 {
+        flex: none;
+        width: 100%;
+        margin: 0 ;
         display: inline-table;
     }
 
