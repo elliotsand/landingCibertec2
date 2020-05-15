@@ -174,7 +174,7 @@
             <span class="puntos"></span>
           </h2>
 
-          <a class="btn-verde home " id="scrollDownBttn">Inscríbete aquí</a>
+          <a class="btn-verde home" id="scrolltop">Inscríbete aquí</a>
           </h2>
         </div>
         <figure class="b3circle_big">
@@ -1194,6 +1194,11 @@
                     $('.exp.dos').removeClass('heightCero');
                     break;
             }
+        });
+        $("#scrolltop").click(function(){
+            $('html, body').animate({
+                scrollTop: $(".b1-inner").offset().top
+            }, 500);
         });
     });
 </script>
