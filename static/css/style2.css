@@ -724,7 +724,6 @@ fieldset input::-webkit-input-placeholder {
 .beneficios p {
     color: #014164;
     margin-bottom: 40px;
-    font-size: 16px;
 }
 
 .beneficios h4 {
@@ -892,11 +891,6 @@ ul.round-padding li {
     width: 100%;
 }
 
-.toogle.active {
-    margin-bottom: 80px;
-}
-
-
 .toogle h3 {
     margin: 12px auto !important;
     font-size: 28px;
@@ -1029,6 +1023,15 @@ h2 {
     font-weight: bold;
 }
 
-.convenios {
-
+.color-inver-bg {
+    background-color: #004165;
+}
+.color-inver-img {
+    filter: invert(1);
+}
+.color-inver-color {
+    color: #fff !important;
+}
+.color-inver-border {
+    border: 1px solid #fff !important;
 }
