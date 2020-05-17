@@ -370,7 +370,7 @@
 
       <section class="mobile-padding">
         <h2 class="section-title mt-75">nuestras escuelas</h2>
-        <h3 class="section-undertitle">Escuela de Negocios</h3>
+        <h3 class="section-undertitle" id="negocios">Escuela de Negocios</h3>
         <div class="line"></div>
         <div class="carreras owl-theme">
           <a href="https://www.cibertec.edu.pe/carreras-profesionales/gestion-y-negocios/administracion-de-empresas/">
@@ -454,7 +454,7 @@
             </div>
           </a>
         </div>
-        <h3 class="section-undertitle">Escuela de Tecnologías de la Tnformación
+        <h3 class="section-undertitle" id="informacion">Escuela de Tecnologías de la Información
         </h3>
         <div class="line"></div>
         <div class="carreras">
@@ -522,7 +522,7 @@
           </a>
 
         </div>
-        <h3 class="section-undertitle">Escuela de Diseño</h3>
+        <h3 class="section-undertitle" id="diseno">Escuela de Diseño</h3>
         <div class="line"></div>
 
         <div class="carreras ">
@@ -565,7 +565,7 @@
             </div>
           </a>
         </div>
-        <h3 class="section-undertitle">Escuela de Comunicaciones</h3>
+        <h3 class="section-undertitle" id="comunicaciones">Escuela de Comunicaciones</h3>
         <div class="line"></div>
         <div class="carreras ">
           <a href="https://www.cibertec.edu.pe/carreras-profesionales/comunicaciones/comunicacion-y-arte-digital/">
@@ -610,7 +610,7 @@
             </div>
           </a>
         </div>
-        <h3 class="section-undertitle">Escuela de Ingeniería</h3>
+        <h3 class="section-undertitle" id="ingenieria">Escuela de Ingeniería</h3>
         <div class="line"></div>
         <div class="carreras ">
           <a href="https://www.cibertec.edu.pe/carreras-profesionales/ingenieria/mecatronica-industrial//carreras-profesionales/carreras-de-diseno-cibertec/">
@@ -1252,6 +1252,39 @@
                 scrollTop: $(".b1-inner").offset().top - 100
             }, 500);
         });
+
+        $( document ).ready(function() {
+            document.location.hash = data
+            switch (data) {
+                case 'negocios':
+                    $('html, body').animate({
+                        scrollTop: $("#negocios").offset().top - 150
+                    }, 500);
+                    break;
+                case 'informacion':
+                    $('html, body').animate({
+                        scrollTop: $("#informacion").offset().top - 150
+                    }, 500);
+                    break;
+                case 'diseno':
+                    $('html, body').animate({
+                        scrollTop: $("#diseno").offset().top - 150
+                    }, 500);
+                    break;
+                case 'comunicaciones':
+                    $('html, body').animate({
+                        scrollTop: $("#comunicaciones").offset().top - 150
+                    }, 500);
+                    break;
+                case 'ingenieria':
+                    $('html, body').animate({
+                        scrollTop: $("#ingenieria").offset().top - 150
+                    }, 500);
+                    break;
+            }
+        });
+
+
     });
 </script>
 
