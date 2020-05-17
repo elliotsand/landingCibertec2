@@ -219,8 +219,44 @@ p.article-paragraph {
     background-repeat: no-repeat;
     background-size: contain;
     max-width: 900px;
-    overflow: hidden;
     margin: 0 auto 100px;
+}
+.carreras  .owl-stage-outer{
+    overflow: hidden !important;
+}
+.carreras .owl-nav {
+    display: block !important;
+}
+.carreras .owl-prev {
+    top: 50%;
+    left: -28px;
+    position: absolute;
+}
+.carreras .owl-next {
+    top: 50%;
+    right: -28px;
+    position: absolute;
+}
+.carreras .owl-nav .icon-arrow-thin-l {
+    display: block;
+    width: 25px;
+    height: 46px;
+    background-image: url(../img2/arrow.png);
+}
+
+.carreras .owl-nav .icon-arrow-thin-r {
+    display: block;
+    width: 25px;
+    height: 46px;
+    background-image: url(../img2/arrow.png);
+    transform: rotate(180deg);
+}
+
+.carreras .owl-nav .icon-arrow-thin-l:before {
+    content: ""
+}
+.carreras .owl-nav .icon-arrow-thin-r:before {
+    content: ""
 }
 
 .carreras .owl-dots {
@@ -1026,12 +1062,15 @@ h2 {
 .color-inver-bg {
     background-color: #004165;
 }
+
 .color-inver-img {
     filter: invert(1);
 }
+
 .color-inver-color {
     color: #fff !important;
 }
+
 .color-inver-border {
     border: 1px solid #fff !important;
 }
