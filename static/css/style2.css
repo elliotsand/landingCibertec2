@@ -199,12 +199,11 @@ h2.header-subtitle {
 }
 
 h3.section-undertitle {
-    font-size: 18px;
+    font-size: 23px;
     color: #0094aa;
     text-align: center;
     margin-bottom: 20px !important;
     font-family: 'BrandonGrotesque-Black';
-    padding-top: 100px;
 }
 
 .line {
@@ -528,7 +527,7 @@ p.article-paragraph {
 
 @media screen and (max-width: 1024px) {
     .section-undertitle {
-        font-size: 20px !important;
+        font-size: 22px !important;
     }
 
     .toogle .icon {
@@ -796,6 +795,7 @@ fieldset input::-webkit-input-placeholder {
         font-size: 40px !important;
         margin-bottom: 0;
         margin-top: 0;
+        font-family: 'BrandonGrotesque-Black', sans-serif;
     }
 
 
@@ -1121,6 +1121,11 @@ h2 {
     font-weight: bold;
 }
 
+.blue-content {
+    background-color: #004165;
+    padding: 10px 0 50px;
+    margin: 60px 0;
+}
 .color-inver-bg {
     background-color: #004165;
 }
