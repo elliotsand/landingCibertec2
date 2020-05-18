@@ -35,6 +35,9 @@
       El siguiente test de orientación vocacional de Psicología-Online tiene
       en cuenta tus aptitudes, habilidades y personalidad para poder configurar
       un mapa muy concreto sobre tus capacidades en el ámbito laboral.
+      <br><br>
+      Además, este test es totalmente gratis y online!
+      Atrévete a hacer el test vocacional y coméntanos tu resultado.
     </p>
 
     <button class="btn primary" id="btn-start">Empezar</button>
@@ -45,20 +48,21 @@
   <div class="question-page element-inactive-left">
     <img src="static/test-img/decor-2.png" class="decor2" />
     <p>
-      Además, este test es totalmente gratis y online!
-      Atrévete a hacer el test vocacional y coméntanos tu resultado.
+      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará  una enumeración siguiendo la siguiente pauta:
+      <br><br>
+      <b>- 01:</b> Absolutamente en desacuerdo<br>
+      <b>- 02:</b> Ciertamente de acuerdo (dubitativo)<br>
+      <b>- 03:</b> Bastante de acuerdo<br>
+      <b>- 04:</b> Totalmente de acuerdo<br>
     </p>
 
-    <h3>
-      Neque porro quisquam est qui dolorem
-      ipsum quia dolor sit amet?
-    </h3>
+    <h3 id="question-1"></h3>
 
     <div class="answers">
-      <div class="answer box-shadow">01</div>
-      <div class="answer box-shadow">02</div>
-      <div class="answer box-shadow">03</div>
-      <div class="answer box-shadow">04</div>
+      <div class="answer box-shadow" data-value="1">01</div>
+      <div class="answer box-shadow" data-value="2">02</div>
+      <div class="answer box-shadow" data-value="3">03</div>
+      <div class="answer box-shadow" data-value="4">04</div>
     </div>
 
     <button class="btn action" id="btn-next" disabled>Siguiente</button>
@@ -69,20 +73,22 @@
   <div class="question-page-next element-inactive-left">
     <img src="static/test-img/decor-2.png" class="decor2" />
     <p>
-      Además, este test es totalmente gratis y online!
-      Atrévete a hacer el test vocacional y coméntanos tu resultado.
+      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará  una enumeración siguiendo la siguiente pauta:
+      <br><br>
+      <b>- 01:</b> Absolutamente en desacuerdo<br>
+      <b>- 02:</b> Ciertamente de acuerdo (dubitativo)<br>
+      <b>- 03:</b> Bastante de acuerdo<br>
+      <b>- 04:</b> Totalmente de acuerdo<br>
     </p>
 
-    <h3>
-      Neque porro quisquam est qui dolorem
-      ipsum quia dolor sit amet?
-    </h3>
+
+    <h3 id="question-2"></h3>
 
     <div class="answers">
-      <div class="answer box-shadow">01</div>
-      <div class="answer box-shadow">02</div>
-      <div class="answer box-shadow">03</div>
-      <div class="answer box-shadow">04</div>
+      <div class="answer box-shadow" data-value="1">01</div>
+      <div class="answer box-shadow" data-value="2">02</div>
+      <div class="answer box-shadow" data-value="3">03</div>
+      <div class="answer box-shadow" data-value="4">04</div>
     </div>
 
     <button class="btn action" id="btn-next-next" disabled>Siguiente</button>
@@ -98,32 +104,121 @@
   const questionImage = $('.image.question');
   const questionPage = $('.question-page');
   const questionPageNext = $('.question-page-next');
+  const answer = $('.answer');
+  const btnStart = $('#btn-start');
+  const btnNext = $('#btn-next');
+  const btnNextNext = $('#btn-next-next');
+  const btnAction = $('.btn.action');
+  const question1 = $('#question-1');
+  const question2 = $('#question-2');
+  let currentQuestion = 0;
 
-  $('#btn-start').click(function () {
+  const questions = [
+      {
+          title: 'Cuando realizo algún trabajo o tarea me gusta hacerlo de manera original de forma diferente a la mayoria de personas.',
+          answer: ''
+      },
+      {
+          title: 'Me interesa saber como se organiza una editorial periodística',
+          answer: ''
+      },
+      {
+          title: 'Me gusta aceptar sugerencias que me hacen compañeros de trabajo y cumplir con responsabilidad las instrucciones recibidas de mis superiores',
+          answer: ''
+      },
+      {
+          title: 'Considero que soy una persona práctica, me gusta ocuparme en trabajos útiles en los que pueda ver pronto los resultados.',
+          answer: ''
+      },
+      {
+          title: 'Me divierten los juegos que requieren "pensamiento analítico": ajedrez, resolver cuestiones de matemáticas, aplicar estrategias, etc.',
+          answer: ''
+      },
+      {
+          title: 'Me gusta manipular herramientas o máquinas y ser capaz de aprovechar todas sus posibilidades.',
+          answer: ''
+      },
+      {
+          title: 'Cuando inicio el conocimiento de un tema nuevo me entusiasma profundizar y no lo dejo hasta que consigo comprenderlo e interpretarlo bien.',
+          answer: ''
+      },
+      {
+          title: 'Me gustaría trabajar en el montaje fotográfico de un diario o revista.',
+          answer: ''
+      },
+      {
+          title: 'Me considero una persona imaginativa, con inspiración, capaz de encontrar soluciones nuevas a los problemas que se presentan.',
+          answer: ''
+      },
+      {
+          title: 'Procuro tener mis cosas bien ordenadas y realizar los trabajos con pulcritud',
+          answer: ''
+      },
+      {
+          title: 'Prefiero las actividades que suponen el contacto con cosas (manipular objetos, utilizar máquinas).',
+          answer: ''
+      },
+      {
+          title: 'Sinceramente, estoy mejor cuando puedo trabajar o estudiar solo/a y puedo concentrarme en lo que hago.',
+          answer: ''
+      },
+      {
+          title: 'No me gusta la falta de estética en carteles o publicaciones.',
+          answer: ''
+      },
+      {
+          title: 'Tengo facilidad para iniciar conversaciones con personas que acabo de conocer y me intereso por sus preferencias o aficiones.',
+          answer: ''
+      },
+      {
+          title: 'A menudo planifico lo que tengo que hacer de manera realista, metódica y detallada. Me gusta las cosas previstas y no actuar al azar o improvisando.',
+          answer: ''
+      },
+  ]
+
+  const nextQuestion = question => {
+      question.html(questions[currentQuestion].title);
+      currentQuestion++;
+  }
+
+  const startTest = () => {
       startPage.addClass('element-inactive-left');
       startImage.addClass('element-inactive-right');
       questionImage.removeClass('element-inactive-right');
       questionPage.removeClass('element-inactive-left');
-  });
+      nextQuestion(question1);
+  }
 
-  $('.answer').click(function () {
-    $('.answer').removeClass('selected');
-    $(this).addClass('selected');
-    $('.btn.action').attr('disabled', false);
-  })
+  function selectAnswer () {
+      answer.removeClass('selected');
+      btnAction.attr('disabled', false);
+      $(this).addClass('selected');
+      questions[currentQuestion - 1].value = $(this).data('value');
+  }
 
-  $('#btn-next').click(function () {
-      $('.answer').removeClass('selected');
-      $('.btn.action').attr('disabled', true);
+  const resetAnswers = () => {
+      answer.removeClass('selected');
+      btnAction.attr('disabled', true);
+  }
+
+  btnStart.click(startTest);
+
+  answer.click(selectAnswer)
+
+  btnNext.click(function () {
+      resetAnswers();
       questionPage.addClass('element-inactive-left');
       questionPageNext.removeClass('element-inactive-left');
+      nextQuestion(question2);
+      console.log(questions);
   })
 
-  $('#btn-next-next').click(function () {
-      $('.answer').removeClass('selected');
-      $('.btn.action').attr('disabled', true);
+  btnNextNext.click(function () {
+      resetAnswers();
       questionPage.removeClass('element-inactive-left');
       questionPageNext.addClass('element-inactive-left');
+      nextQuestion(question1);
+      console.log(questions);
   })
 
 </script>
