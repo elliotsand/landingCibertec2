@@ -208,7 +208,7 @@
 .b1-progress {
   background-color: #65d800;
   width: 80%;
-  height: 100%;
+  height: 100vh;
 }
 .b1-wrap-pager {
   height: 15vh;
@@ -348,6 +348,7 @@
   background-size: cover;
   background-position: center;
   height: calc(100vh - 80px);
+  min-height: 520px;
 }
 .b1-inner {
   max-width: 330px;
