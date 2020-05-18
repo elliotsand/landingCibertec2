@@ -234,6 +234,13 @@
 .b4-head-tab:first-child {
     margin-left: 0
 }
+.b4-main.desktop{
+    display: block;
+}
+.b4-main.mobile{
+
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
     .b4-head-tab {
@@ -244,6 +251,14 @@
 
     .b4-head-tab:first-child {
         margin-left: 0
+    }
+
+    .b4-main.desktop{
+        display: none;
+    }
+    .b4-main.mobile{
+
+        display: block;
     }
 }
 
