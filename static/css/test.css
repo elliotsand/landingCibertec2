@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'BrandonGrotesque-Medium';
+    src: url("../fonts/BrandonGrotesque-Medium.eot");
+    src: url("../fonts/BrandonGrotesque-Medium.eot?#iefix") format('embedded-opentype'), url("../fonts/BrandonGrotesque-Medium.svg#BrandonGrotesque-Medium") format('svg'), url("../fonts/BrandonGrotesque-Medium.ttf") format('truetype'), url("../fonts/BrandonGrotesque-Medium.woff") format('woff'), url("../fonts/BrandonGrotesque-Medium.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'BrandonGrotesque-Black';
+    src: url("../fonts/BrandonGrotesque-Black.eot");
+    src: url("../fonts/BrandonGrotesque-Black.eot?#iefix") format('embedded-opentype'), url("../fonts/BrandonGrotesque-Black.svg#BrandonGrotesque-Black") format('svg'), url("../fonts/BrandonGrotesque-Black.ttf") format('truetype'), url("../fonts/BrandonGrotesque-Black.woff") format('woff'), url("../fonts/BrandonGrotesque-Black.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'BrandonGrotesque-Regular';
+    src: url("../fonts/BrandonGrotesque-Regular.eot");
+    src: url("../fonts/BrandonGrotesque-Regular.eot?#iefix") format('embedded-opentype'), url("../fonts/BrandonGrotesque-Regular.svg#BrandonGrotesque-Regular") format('svg'), url("../fonts/BrandonGrotesque-Regular.ttf") format('truetype'), url("../fonts/BrandonGrotesque-Regular.woff") format('woff'), url("../fonts/BrandonGrotesque-Regular.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'BrandonGrotesque-Bold';
+    src: url("../fonts/BrandonGrotesque-Bold.eot");
+    src: url("../fonts/BrandonGrotesque-Bold.eot?#iefix") format('embedded-opentype'), url("../fonts/BrandonGrotesque-Bold.svg#BrandonGrotesque-Bold") format('svg'), url("../fonts/BrandonGrotesque-Bold.ttf") format('truetype'), url("../fonts/BrandonGrotesque-Bold.woff") format('woff'), url("../fonts/BrandonGrotesque-Bold.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url("../fonts/icomoon.eot?c7l5mf");
+    src: url("../fonts/icomoon.eot?#iefixc7l5mf") format('embedded-opentype'), url("../fonts/icomoon.ttf?c7l5mf") format('truetype'), url("../fonts/icomoon.woff?c7l5mf") format('woff'), url("../fonts/icomoon.svg?c7l5mf#icomoon") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+body {
+    height: 100vh;
+
+}
+
+.bg {
+    max-width: calc(100% - 430px);
+    background-image: url("../test-img/foto-bg.png");
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.container {
+    max-width: 940px;
+    margin: auto;
+    position: relative;
+    z-index: 10;
+}
+
+header.main-header {
+    padding-top: 25px;
+}
+
+.green-box {
+    background-color: #65d800;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 430px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 10px 10px 40px -10px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 10px 10px 40px -10px rgba(0, 0, 0, 0.27);
+    box-shadow: 10px 10px 40px -10px rgba(0, 0, 0, 0.27);
+}
+
+.image {
+    width: 580px;
+    height: 673px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.image.start {
+    background-image: url("../test-img/foto-inicio.png");
+    transition: all .3s;
+}
+
+.image.question {
+    background-image: url("../test-img/foto-pregunta.png");
+    transition: all .3s;
+}
+
+.decor2 {
+    margin-top: 55px;
+}
+
+
+.start-page, .question-page, .question-page-next {
+    max-width: 450px;
+    transition: all .5s;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.element-inactive-left {
+    transform: translate(-200%, -50%);
+    opacity: 0;
+}
+
+.element-inactive-right {
+    transform: translate(200%, -50%);
+    opacity: 0;
+}
+
+.element-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+h1 {
+    font-size: 50px;
+    color: #004165;
+    font-weight: normal;
+    font-family: 'BrandonGrotesque-Regular';
+    margin: 50px 0;
+}
+
+h3 {
+    font-size: 19px;
+    text-transform: uppercase;
+    color: #004165;
+    font-weight: normal;
+    font-family: 'BrandonGrotesque-Regular';
+    margin: 50px 0;
+}
+
+p {
+    font-size: 16px;
+    color: #004165;
+    font-family: 'BrandonGrotesque-Regular';
+}
+
+.start-page p {
+    margin-bottom: 50px;
+}
+
+.btn {
+    border: none;
+    border-radius: 40px;
+    height: 60px;
+    width: 330px;
+    font-size: 23px;
+    font-family: 'BrandonGrotesque-Medium';
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background-color: #004165;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #42c200;
+}
+
+.btn.action {
+    background-color: #42c200;
+    color: white;
+    height: 40px;
+    width: 155px;
+    font-size: 15px;
+}
+
+.btn.action[disabled] {
+    background-color: lightgray;
+}
+
+.decor {
+    display: block;
+    margin-top: 50px;
+}
+
+.answers {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.answer {
+    background-image: url("../test-img/btn-normal.png");
+    width: 100px;
+    height: 115px;
+    font-family: 'BrandonGrotesque-Regular';
+    color: #004165;
+    font-size: 41px;
+    box-sizing: border-box;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.answer:hover, .answer.selected {
+    background-image: url("../test-img/btn-hover.png");
+    color: white;
+}
