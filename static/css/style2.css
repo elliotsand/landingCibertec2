@@ -1121,6 +1121,11 @@ h2 {
     font-weight: bold;
 }
 
+.blue-content {
+    background-color: #004165;
+    padding: 10px 0 50px;
+    margin: 60px 0;
+}
 .color-inver-bg {
     background-color: #004165;
 }
