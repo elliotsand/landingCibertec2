@@ -795,6 +795,7 @@ fieldset input::-webkit-input-placeholder {
         font-size: 40px !important;
         margin-bottom: 0;
         margin-top: 0;
+        font-family: 'BrandonGrotesque-Black', sans-serif;
     }
 
 
