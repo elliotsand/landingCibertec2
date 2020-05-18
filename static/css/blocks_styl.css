@@ -176,10 +176,25 @@
 .b1-main-form {
   position: relative;
 }
+.b1-wrap-form.desktop{
+  display: block;
+}
+.b1-wrap-form.mobile{
+  display: none;
+}
 .b1-main-form .b1-inner {
   position: absolute;
   right: 0;
   top: calc(((100vh / 2) - 80px) - 30vh);
+}
+@media screen and (max-width: 768px) {
+
+  .b1-wrap-form.desktop{
+    display: none;
+  }
+  .b1-wrap-form.mobile{
+    display: block;
+  }
 }
 @media screen and (max-height: 670px) {
   .b1-main-form .g0-input {
@@ -547,7 +562,9 @@
   flex-flow: row wrap;
 }
 @media screen and (max-width: 480px) {
-  .b2 .g0-btn {
+  .b2 {
+    padding: 0;
+  } .b2 .g0-btn {
     max-width: 250px;
   }
 }
