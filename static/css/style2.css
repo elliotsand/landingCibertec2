@@ -199,7 +199,7 @@ h2.header-subtitle {
 }
 
 h3.section-undertitle {
-    font-size: 18px;
+    font-size: 23px;
     color: #0094aa;
     text-align: center;
     margin-bottom: 20px !important;
@@ -528,7 +528,7 @@ p.article-paragraph {
 
 @media screen and (max-width: 1024px) {
     .section-undertitle {
-        font-size: 20px !important;
+        font-size: 22px !important;
     }
 
     .toogle .icon {
