@@ -59,10 +59,10 @@
     <h3 id="question-1"></h3>
 
     <div class="answers">
-      <div class="answer box-shadow">01</div>
-      <div class="answer box-shadow">02</div>
-      <div class="answer box-shadow">03</div>
-      <div class="answer box-shadow">04</div>
+      <div class="answer box-shadow" data-value="1">01</div>
+      <div class="answer box-shadow" data-value="2">02</div>
+      <div class="answer box-shadow" data-value="3">03</div>
+      <div class="answer box-shadow" data-value="4">04</div>
     </div>
 
     <button class="btn action" id="btn-next" disabled>Siguiente</button>
@@ -85,10 +85,10 @@
     <h3 id="question-2"></h3>
 
     <div class="answers">
-      <div class="answer box-shadow">01</div>
-      <div class="answer box-shadow">02</div>
-      <div class="answer box-shadow">03</div>
-      <div class="answer box-shadow">04</div>
+      <div class="answer box-shadow" data-value="1">01</div>
+      <div class="answer box-shadow" data-value="2">02</div>
+      <div class="answer box-shadow" data-value="3">03</div>
+      <div class="answer box-shadow" data-value="4">04</div>
     </div>
 
     <button class="btn action" id="btn-next-next" disabled>Siguiente</button>
@@ -104,6 +104,11 @@
   const questionImage = $('.image.question');
   const questionPage = $('.question-page');
   const questionPageNext = $('.question-page-next');
+  const answer = $('.answer');
+  const btnStart = $('#btn-start');
+  const btnNext = $('#btn-next');
+  const btnNextNext = $('#btn-next-next');
+  const btnAction = $('.btn.action');
   const question1 = $('#question-1');
   const question2 = $('#question-2');
   let currentQuestion = 0;
@@ -171,37 +176,49 @@
       },
   ]
 
-  $('#btn-start').click(function () {
+  const nextQuestion = question => {
+      question.html(questions[currentQuestion].title);
+      currentQuestion++;
+  }
+
+  const startTest = () => {
       startPage.addClass('element-inactive-left');
       startImage.addClass('element-inactive-right');
       questionImage.removeClass('element-inactive-right');
       questionPage.removeClass('element-inactive-left');
-      question1.html(questions[currentQuestion].title);
-      currentQuestion++;
-  });
+      nextQuestion(question1);
+  }
 
-  $('.answer').click(function () {
-    $('.answer').removeClass('selected');
-    $(this).addClass('selected');
-    $('.btn.action').attr('disabled', false);
-  })
+  function selectAnswer () {
+      answer.removeClass('selected');
+      btnAction.attr('disabled', false);
+      $(this).addClass('selected');
+      questions[currentQuestion - 1].value = $(this).data('value');
+  }
 
-  $('#btn-next').click(function () {
-      $('.answer').removeClass('selected');
-      $('.btn.action').attr('disabled', true);
+  const resetAnswers = () => {
+      answer.removeClass('selected');
+      btnAction.attr('disabled', true);
+  }
+
+  btnStart.click(startTest);
+
+  answer.click(selectAnswer)
+
+  btnNext.click(function () {
+      resetAnswers();
       questionPage.addClass('element-inactive-left');
       questionPageNext.removeClass('element-inactive-left');
-      question2.html(questions[currentQuestion].title);
-      currentQuestion++;
+      nextQuestion(question2);
+      console.log(questions);
   })
 
-  $('#btn-next-next').click(function () {
-      $('.answer').removeClass('selected');
-      $('.btn.action').attr('disabled', true);
+  btnNextNext.click(function () {
+      resetAnswers();
       questionPage.removeClass('element-inactive-left');
       questionPageNext.addClass('element-inactive-left');
-      question1.html(questions[currentQuestion].title);
-      currentQuestion++;
+      nextQuestion(question1);
+      console.log(questions);
   })
 
 </script>
