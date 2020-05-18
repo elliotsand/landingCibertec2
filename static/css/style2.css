@@ -1090,6 +1090,9 @@ ul.round-padding li:hover {
     .columns.is-multiline {
         display: block;
     }
+    .no-mobile-flex-container{
+        display: block;
+    }
 }
 
 @media screen and (max-width: 480px) {
