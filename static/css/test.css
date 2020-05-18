@@ -105,7 +105,7 @@ header.main-header {
 }
 
 
-.start-page, .question-page, .question-page-next {
+.start-page, .question-page, .question-page-next, .results-page {
     max-width: 450px;
     transition: all .5s;
     position: fixed;
