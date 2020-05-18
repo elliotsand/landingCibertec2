@@ -35,6 +35,9 @@
       El siguiente test de orientación vocacional de Psicología-Online tiene
       en cuenta tus aptitudes, habilidades y personalidad para poder configurar
       un mapa muy concreto sobre tus capacidades en el ámbito laboral.
+      <br><br>
+      Además, este test es totalmente gratis y online!
+      Atrévete a hacer el test vocacional y coméntanos tu resultado.
     </p>
 
     <button class="btn primary" id="btn-start">Empezar</button>
@@ -45,14 +48,15 @@
   <div class="question-page element-inactive-left">
     <img src="static/test-img/decor-2.png" class="decor2" />
     <p>
-      Además, este test es totalmente gratis y online!
-      Atrévete a hacer el test vocacional y coméntanos tu resultado.
+      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará  una enumeración siguiendo la siguiente pauta:
+      <br><br>
+      <b>- 01:</b> Absolutamente en desacuerdo<br>
+      <b>- 02:</b> Ciertamente de acuerdo (dubitativo)<br>
+      <b>- 03:</b> Bastante de acuerdo<br>
+      <b>- 04:</b> Totalmente de acuerdo<br>
     </p>
 
-    <h3>
-      Neque porro quisquam est qui dolorem
-      ipsum quia dolor sit amet?
-    </h3>
+    <h3 id="question-1"></h3>
 
     <div class="answers">
       <div class="answer box-shadow">01</div>
@@ -69,14 +73,16 @@
   <div class="question-page-next element-inactive-left">
     <img src="static/test-img/decor-2.png" class="decor2" />
     <p>
-      Además, este test es totalmente gratis y online!
-      Atrévete a hacer el test vocacional y coméntanos tu resultado.
+      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará  una enumeración siguiendo la siguiente pauta:
+      <br><br>
+      <b>- 01:</b> Absolutamente en desacuerdo<br>
+      <b>- 02:</b> Ciertamente de acuerdo (dubitativo)<br>
+      <b>- 03:</b> Bastante de acuerdo<br>
+      <b>- 04:</b> Totalmente de acuerdo<br>
     </p>
 
-    <h3>
-      Neque porro quisquam est qui dolorem
-      ipsum quia dolor sit amet?
-    </h3>
+
+    <h3 id="question-2"></h3>
 
     <div class="answers">
       <div class="answer box-shadow">01</div>
@@ -98,12 +104,80 @@
   const questionImage = $('.image.question');
   const questionPage = $('.question-page');
   const questionPageNext = $('.question-page-next');
+  const question1 = $('#question-1');
+  const question2 = $('#question-2');
+  let currentQuestion = 0;
+
+  const questions = [
+      {
+          title: 'Cuando realizo algún trabajo o tarea me gusta hacerlo de manera original de forma diferente a la mayoria de personas.',
+          answer: ''
+      },
+      {
+          title: 'Me interesa saber como se organiza una editorial periodística',
+          answer: ''
+      },
+      {
+          title: 'Me gusta aceptar sugerencias que me hacen compañeros de trabajo y cumplir con responsabilidad las instrucciones recibidas de mis superiores',
+          answer: ''
+      },
+      {
+          title: 'Considero que soy una persona práctica, me gusta ocuparme en trabajos útiles en los que pueda ver pronto los resultados.',
+          answer: ''
+      },
+      {
+          title: 'Me divierten los juegos que requieren "pensamiento analítico": ajedrez, resolver cuestiones de matemáticas, aplicar estrategias, etc.',
+          answer: ''
+      },
+      {
+          title: 'Me gusta manipular herramientas o máquinas y ser capaz de aprovechar todas sus posibilidades.',
+          answer: ''
+      },
+      {
+          title: 'Cuando inicio el conocimiento de un tema nuevo me entusiasma profundizar y no lo dejo hasta que consigo comprenderlo e interpretarlo bien.',
+          answer: ''
+      },
+      {
+          title: 'Me gustaría trabajar en el montaje fotográfico de un diario o revista.',
+          answer: ''
+      },
+      {
+          title: 'Me considero una persona imaginativa, con inspiración, capaz de encontrar soluciones nuevas a los problemas que se presentan.',
+          answer: ''
+      },
+      {
+          title: 'Procuro tener mis cosas bien ordenadas y realizar los trabajos con pulcritud',
+          answer: ''
+      },
+      {
+          title: 'Prefiero las actividades que suponen el contacto con cosas (manipular objetos, utilizar máquinas).',
+          answer: ''
+      },
+      {
+          title: 'Sinceramente, estoy mejor cuando puedo trabajar o estudiar solo/a y puedo concentrarme en lo que hago.',
+          answer: ''
+      },
+      {
+          title: 'No me gusta la falta de estética en carteles o publicaciones.',
+          answer: ''
+      },
+      {
+          title: 'Tengo facilidad para iniciar conversaciones con personas que acabo de conocer y me intereso por sus preferencias o aficiones.',
+          answer: ''
+      },
+      {
+          title: 'A menudo planifico lo que tengo que hacer de manera realista, metódica y detallada. Me gusta las cosas previstas y no actuar al azar o improvisando.',
+          answer: ''
+      },
+  ]
 
   $('#btn-start').click(function () {
       startPage.addClass('element-inactive-left');
       startImage.addClass('element-inactive-right');
       questionImage.removeClass('element-inactive-right');
       questionPage.removeClass('element-inactive-left');
+      question1.html(questions[currentQuestion].title);
+      currentQuestion++;
   });
 
   $('.answer').click(function () {
@@ -117,6 +191,8 @@
       $('.btn.action').attr('disabled', true);
       questionPage.addClass('element-inactive-left');
       questionPageNext.removeClass('element-inactive-left');
+      question2.html(questions[currentQuestion].title);
+      currentQuestion++;
   })
 
   $('#btn-next-next').click(function () {
@@ -124,6 +200,8 @@
       $('.btn.action').attr('disabled', true);
       questionPage.removeClass('element-inactive-left');
       questionPageNext.addClass('element-inactive-left');
+      question1.html(questions[currentQuestion].title);
+      currentQuestion++;
   })
 
 </script>
