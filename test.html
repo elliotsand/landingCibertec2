@@ -19,19 +19,17 @@
 <div class="container">
   <header class="main-header">
     <div class="logo"><img src="static/test-img/logo.png" alt=""></div>
+    <div class="indice element-inactive-left">1 / 15</div>
+    <img src="static/test-img/decor-2.png" class="decor2"/>
   </header>
 </div>
 
 <div class="container">
   <div class="start-page">
-    <img src="static/test-img/decor-2.png" class="decor2"/>
-    <h1>
-      ¿Quieres saber <br>
-      cuál es tu orientación <br>
-      profesional y tu<br>
-      trabajo ideal?
+    <h1 class="white-box">
+      ¿Quieres saber cuál es tu orientación profesional y tu trabajo ideal?
     </h1>
-    <p>
+    <p class="white-box">
       El siguiente test de orientación vocacional de Psicología-Online tiene
       en cuenta tus aptitudes, habilidades y personalidad para poder configurar
       un mapa muy concreto sobre tus capacidades en el ámbito laboral.
@@ -45,18 +43,21 @@
     <img class="decor" src="static/test-img/decor.png"/>
   </div>
 
-  <div class="question-page element-inactive-left">
-    <img src="static/test-img/decor-2.png" class="decor2"/>
-    <p>
-      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará una enumeración siguiendo la
+  <div class="instructions-page element-inactive-left">
+    <p class="white-box fs-20">
+      A continuación se le presentará <b>15 preguntas</b> de las cuales tendrá que leer y colocará una enumeración siguiendo la
       siguiente pauta:
       <br><br>
-      <b>- 01:</b> Absolutamente en desacuerdo<br>
-      <b>- 02:</b> Ciertamente de acuerdo (dubitativo)<br>
-      <b>- 03:</b> Bastante de acuerdo<br>
-      <b>- 04:</b> Totalmente de acuerdo<br>
+      <b class="border-square">01</b> Absolutamente en desacuerdo<br>
+      <b class="border-square">02</b> Ciertamente de acuerdo (dubitativo)<br>
+      <b class="border-square">03</b> Bastante de acuerdo<br>
+      <b class="border-square">04</b> Totalmente de acuerdo<br>
     </p>
 
+    <button class="btn action" id="btn-instructions">Entendido</button>
+  </div>
+
+  <div class="question-page element-inactive-left">
     <h3 id="question-1"></h3>
 
     <div class="answers">
@@ -72,18 +73,7 @@
   </div>
 
   <div class="question-page-next element-inactive-left">
-    <img src="static/test-img/decor-2.png" class="decor2"/>
-    <p>
-      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará una enumeración siguiendo la
-      siguiente pauta:
-      <br><br>
-      <b>- 01:</b> Absolutamente en desacuerdo<br>
-      <b>- 02:</b> Ciertamente de acuerdo (dubitativo)<br>
-      <b>- 03:</b> Bastante de acuerdo<br>
-      <b>- 04:</b> Totalmente de acuerdo<br>
-    </p>
-
-    <h3 id="question-2"></h3>
+    <h3 id="question-2" class="white-box"></h3>
 
     <div class="answers">
       <div class="answer box-shadow" data-value="1">01</div>
@@ -98,7 +88,7 @@
   </div>
 
   <div class="form-page element-inactive-left">
-    <h3>Antes de procesar el resultado. Necesitamos unos datos:</h3>
+    <h3 class="mb-0">Antes de procesar el resultado. Necesitamos unos datos:</h3>
     <form action="">
       <div class="input-wrapper">
         <input type="text" name="nombre" placeholder="Nombre">
@@ -128,12 +118,11 @@
   </div>
 
   <div class="results-page element-inactive-left">
-    <img src="static/test-img/decor-2.png" class="decor2"/>
-    <h1>Perfecto. <br>El resultado del test es el siguiente:</h1>
+    <h3>Perfecto. <br>El resultado del test es el siguiente:</h3>
 
     <h3 id="result-text">Resultado del test</h3>
 
-    <button class="btn action" id="back">Volver</button>
+    <a href="https://www.cibertec.edu.pe/carreras-profesionales/" class="btn action" id="back">Conoce nuestras carreras</a>
 
     <img class="decor" src="static/test-img/decor.png"/>
   </div>
@@ -143,6 +132,8 @@
 <script>
     const startPage = $('.start-page');
     const resultPage = $('.results-page');
+    const instructionsPage = $('.instructions-page');
+    const indice = $('.indice');
     const formPage = $('.form-page');
     const startImage = $('.image.start');
     const questionImage = $('.image.question');
@@ -254,7 +245,8 @@
     ];
 
     const nextQuestion = question => {
-        question.html(`<span>${currentQuestion+1} / ${questions.length}</span> ${questions[currentQuestion].title}`);
+        indice.html(`${currentQuestion + 1} / ${questions.length}`);
+        question.html(`${questions[currentQuestion].title}`);
         currentQuestion++;
     };
 
@@ -267,13 +259,20 @@
     const startTest = () => {
         startPage.addClass('element-inactive-left');
         startImage.addClass('element-inactive-right');
+        instructionsPage.removeClass('element-inactive-left');
+    };
+
+    const firstQuestion = () => {
+        instructionsPage.addClass('element-inactive-left');
         questionImage.removeClass('element-inactive-right');
         questionPage.removeClass('element-inactive-left');
+        indice.removeClass('element-inactive-left');
         nextQuestion(question1);
     };
 
     const endTest = () => {
         questionPage.addClass('element-inactive-left');
+        indice.addClass('element-inactive-left');
         questionPageNext.addClass('element-inactive-left');
         formPage.removeClass('element-inactive-left');
     };
@@ -291,9 +290,6 @@
                 result.result = item;
             }
         });
-
-        console.log(points);
-        console.log(result);
 
         $('#result-text').html(results[result.result]);
 
@@ -315,6 +311,7 @@
     };
 
     btnStart.click(startTest);
+    $('#btn-instructions').click(firstQuestion);
 
     answer.click(selectAnswer);
 
