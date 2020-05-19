@@ -81,7 +81,6 @@
       <b>- 04:</b> Totalmente de acuerdo<br>
     </p>
 
-
     <h3 id="question-2"></h3>
 
     <div class="answers">
@@ -95,11 +94,23 @@
 
     <img class="decor" src="static/test-img/decor.png" />
   </div>
+
+  <div class="results-page element-inactive-left">
+    <img src="static/test-img/decor-2.png" class="decor2" />
+    <h1>Perfecto. <br>El resultado del test es el siguiente:</h1>
+
+    <h3 id="result-text">Resultado del test</h3>
+
+    <button class="btn action" id="back">Volver</button>
+
+    <img class="decor" src="static/test-img/decor.png" />
+  </div>
 </div>
 
 <script src="static/js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script>
   const startPage = $('.start-page');
+  const resultPage = $('.results-page');
   const startImage = $('.image.start');
   const questionImage = $('.image.question');
   const questionPage = $('.question-page');
@@ -107,6 +118,7 @@
   const answer = $('.answer');
   const btnStart = $('#btn-start');
   const btnNext = $('#btn-next');
+  const btnBack = $('#back');
   const btnNextNext = $('#btn-next-next');
   const btnAction = $('.btn.action');
   const question1 = $('#question-1');
@@ -189,6 +201,13 @@
       nextQuestion(question1);
   }
 
+  const endTest = () => {
+      btnAction.attr('disabled', false);
+      questionPage.addClass('element-inactive-left');
+      questionPageNext.addClass('element-inactive-left');
+      resultPage.removeClass('element-inactive-left');
+  }
+
   function selectAnswer () {
       answer.removeClass('selected');
       btnAction.attr('disabled', false);
@@ -207,18 +226,34 @@
 
   btnNext.click(function () {
       resetAnswers();
-      questionPage.addClass('element-inactive-left');
-      questionPageNext.removeClass('element-inactive-left');
-      nextQuestion(question2);
-      console.log(questions);
+      if (currentQuestion === questions.length) {
+          endTest();
+      } else {
+          questionPage.addClass('element-inactive-left');
+          questionPageNext.removeClass('element-inactive-left');
+          nextQuestion(question2);
+      }
   })
 
   btnNextNext.click(function () {
       resetAnswers();
-      questionPage.removeClass('element-inactive-left');
+      if (currentQuestion === questions.length) {
+          endTest();
+      } else {
+          questionPage.removeClass('element-inactive-left');
+          questionPageNext.addClass('element-inactive-left');
+          nextQuestion(question1);
+      }
+  })
+
+  btnBack.click(function () {
+      startPage.removeClass('element-inactive-left');
+      startImage.removeClass('element-inactive-right');
+      questionImage.addClass('element-inactive-right');
+      resultPage.addClass('element-inactive-right');
+      questionPage.addClass('element-inactive-left');
       questionPageNext.addClass('element-inactive-left');
-      nextQuestion(question1);
-      console.log(questions);
+      currentQuestion = 0;
   })
 
 </script>
