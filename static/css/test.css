@@ -148,6 +148,14 @@ h3 {
     border-radius: 15px;
 }
 
+h3 span {
+    color: #42c200;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
 p {
     font-size: 16px;
     color: #004165;
@@ -260,3 +268,15 @@ input, select {
     -moz-appearance: none;
     appearance: none;
 }
+ #result-text {
+     font-size: 17px;
+     line-height: 27px;
+     padding: 23px;
+ }
+
+ #result-text b {
+     font-size: 22px;
+     margin-bottom: -11px;
+     display: block;
+     color: #42c200;
+ }

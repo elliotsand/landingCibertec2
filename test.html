@@ -159,73 +159,110 @@
     const question2 = $('#question-2');
     let currentQuestion = 0;
 
+    const points = {
+        r: 0,
+        c: 0,
+        a: 0,
+        s: 0,
+        o: 0
+    }
+
+    const results = {
+        r: '<b>INGENIERIA</b><br>Son personas que demuestran interés por actividades prácticas mecánicas, que a menudo exige esfuerzo físico. Prefieren  trabajar con herramientas y objetos. Desean construir cosas y ver resultados prácticos en su trabajo.',
+        c: '<b>TECNOLOGÍA DE LA INFORMACIÓN</b><br>Valoran altamente las matemáticas y reflexionan para comprender procesos lógicos. Tienden a ser personas analíticas, críticas y metódicas',
+        a: '<b>DISEÑO</b><br>Se relacionan con el entorno físico y social utilizando sus sentimiento y su intuición e imaginación. Demuestran interés por actividades creativas.',
+        s: '<b>COMUNICACIONES</b><br>Se relacionan bien con todo tipo de personas, tiene buena habilidad de comunicación interpersonal. Tiene agrado por actividaes ligadas a transmitir información de manera objetiva.',
+        o: '<b>GESTIÓN Y NEGOCIOS</b><br>Prefieren ocupaciones con deberes claramente definidos: tareas de carácter rutinario, actividades verbales o numéricas propias del trabajo de oficina. Son personas ordenadas, sistemáticas y perseverantes.',
+    };
+
     const questions = [
         {
             title : 'Cuando realizo algún trabajo o tarea me gusta hacerlo de manera original de forma diferente a la mayoria de personas.',
-            answer: ''
+            answer: '',
+            points: ['r', 'c', 's', 'o']
         },
         {
             title : 'Me interesa saber como se organiza una editorial periodística',
-            answer: ''
+            answer: '',
+            points: ['r', 'c', 'a', 'o']
         },
         {
             title : 'Me gusta aceptar sugerencias que me hacen compañeros de trabajo y cumplir con responsabilidad las instrucciones recibidas de mis superiores',
-            answer: ''
+            answer: '',
+            points: ['r', 'c', 's', 'a']
         },
         {
             title : 'Considero que soy una persona práctica, me gusta ocuparme en trabajos útiles en los que pueda ver pronto los resultados.',
-            answer: ''
+            answer: '',
+            points: ['a', 'c', 's', 'o']
         },
         {
             title : 'Me divierten los juegos que requieren "pensamiento analítico": ajedrez, resolver cuestiones de matemáticas, aplicar estrategias, etc.',
-            answer: ''
+            answer: '',
+            points: ['r', 'a', 's', 'o']
         },
         {
             title : 'Me gusta manipular herramientas o máquinas y ser capaz de aprovechar todas sus posibilidades.',
-            answer: ''
+            answer: '',
+            points: ['a', 'c', 's', 'o']
         },
         {
             title : 'Cuando inicio el conocimiento de un tema nuevo me entusiasma profundizar y no lo dejo hasta que consigo comprenderlo e interpretarlo bien.',
-            answer: ''
+            answer: '',
+            points: ['r', 'a', 's', 'o']
         },
         {
             title : 'Me gustaría trabajar en el montaje fotográfico de un diario o revista.',
-            answer: ''
+            answer: '',
+            points: ['r', 'a', 'a', 'o']
         },
         {
             title : 'Me considero una persona imaginativa, con inspiración, capaz de encontrar soluciones nuevas a los problemas que se presentan.',
-            answer: ''
+            answer: '',
+            points: ['r', 'c', 's', 'o']
         },
         {
             title : 'Procuro tener mis cosas bien ordenadas y realizar los trabajos con pulcritud',
-            answer: ''
+            answer: '',
+            points: ['r', 'c', 's', 'a']
         },
         {
             title : 'Prefiero las actividades que suponen el contacto con cosas (manipular objetos, utilizar máquinas).',
-            answer: ''
+            answer: '',
+            points: ['a', 'c', 's', 'o']
         },
         {
             title : 'Sinceramente, estoy mejor cuando puedo trabajar o estudiar solo/a y puedo concentrarme en lo que hago.',
-            answer: ''
+            answer: '',
+            points: ['r', 'a', 's', 'o']
         },
         {
             title : 'No me gusta la falta de estética en carteles o publicaciones.',
-            answer: ''
+            answer: '',
+            points: ['r', 'c', 's', 'o']
         },
         {
             title : 'Tengo facilidad para iniciar conversaciones con personas que acabo de conocer y me intereso por sus preferencias o aficiones.',
-            answer: ''
+            answer: '',
+            points: ['r', 'c', 'a', 'o']
         },
         {
             title : 'A menudo planifico lo que tengo que hacer de manera realista, metódica y detallada. Me gusta las cosas previstas y no actuar al azar o improvisando.',
-            answer: ''
+            answer: '',
+            points: ['r', 'c', 's', 'a']
         }
     ];
 
     const nextQuestion = question => {
-        question.html(questions[currentQuestion].title);
+        question.html(`<span>${currentQuestion+1} / ${questions.length}</span> ${questions[currentQuestion].title}`);
         currentQuestion++;
     };
+
+    const calculatePoints = () => {
+        questions[currentQuestion - 1].points.forEach((point) => {
+            points[point] += +questions[currentQuestion - 1].answer;
+        });
+    }
 
     const startTest = () => {
         startPage.addClass('element-inactive-left');
@@ -242,15 +279,34 @@
     };
 
     const showResults = () => {
+        const pointsMapper = ['r', 'c', 'a', 's', 'o'];
+        let result = {
+            result: '',
+            value: 0
+        };
+
+        pointsMapper.forEach(item => {
+            if (points[item] > result.value) {
+                result.value = points[item];
+                result.result = item;
+            }
+        });
+
+        console.log(points);
+        console.log(result);
+
+        $('#result-text').html(results[result.result]);
+
         formPage.addClass('element-inactive-left');
         resultPage.removeClass('element-inactive-left');
+        $('.btn.action').attr('disabled', false);
     };
 
     function selectAnswer () {
         answer.removeClass('selected');
         btnAction.attr('disabled', false);
         $(this).addClass('selected');
-        questions[currentQuestion - 1].value = $(this).data('value');
+        questions[currentQuestion - 1].answer = $(this).data('value');
     }
 
     const resetAnswers = () => {
@@ -269,6 +325,7 @@
         } else {
             questionPage.addClass('element-inactive-left');
             questionPageNext.removeClass('element-inactive-left');
+            calculatePoints();
             nextQuestion(question2);
         }
     });
@@ -280,6 +337,7 @@
         } else {
             questionPage.removeClass('element-inactive-left');
             questionPageNext.addClass('element-inactive-left');
+            calculatePoints();
             nextQuestion(question1);
         }
     });
