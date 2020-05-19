@@ -132,6 +132,7 @@ button {
 .tarjeta img {
     margin: 19px 0 32px;
     display: block;
+    max-height: 65px;
 }
 
 .tarjeta p {
@@ -555,8 +556,9 @@ p.article-paragraph {
         justify-content: space-between;
         align-items: flex-start;
         max-width: 300px;
+        margin: auto;
         width: 300px;
-        min-height: 172px;
+        min-height: 200px;
         position: relative;
     }
 
