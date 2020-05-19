@@ -618,6 +618,10 @@ p.article-paragraph {
         margin-top: 10px !important;
         margin-bottom: 40px !important;
     }
+
+    .line {
+        margin: 0 auto 25px;
+    }
 }
 
 .cont-form {
@@ -790,11 +794,24 @@ fieldset input::-webkit-input-placeholder {
     margin-bottom: 10px;
 }
 
+h3.internas {
+    font-size: 40px !important;
+    margin-bottom: 70px;
+    margin-top: 50px;
+    font-family: 'BrandonGrotesque-Black', sans-serif;
+}
+
 @media screen and (max-width: 1024px) {
     h2.internas {
         font-size: 40px !important;
         margin-bottom: 0;
         margin-top: 0;
+        font-family: 'BrandonGrotesque-Black', sans-serif;
+    }
+    h3.internas {
+        font-size: 40px !important;
+        margin-bottom: 30px;
+        margin-top: 30px;
         font-family: 'BrandonGrotesque-Black', sans-serif;
     }
 
@@ -894,7 +911,7 @@ fieldset input::-webkit-input-placeholder {
     }
 
     .carreras {
-        margin: 0 auto 69px;
+        margin: 0 auto 40px;
         width: 100%;
     }
 
@@ -1080,39 +1097,6 @@ ul.round-padding li:hover {
     margin: 30px 0 0 0;
 }
 
-@media screen and (max-width: 1024px) {
-    .is-3 {
-        flex: none;
-        width: 40%;
-        margin: 0 4.5%;
-        display: inline-table;
-    }
-
-    .columns.is-multiline {
-        display: block;
-    }
-    .no-mobile-flex-container{
-        display: block;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .is-3 {
-        flex: none;
-        width: 100%;
-        margin: 0;
-        display: inline-table;
-    }
-
-    .columns.is-multiline {
-        display: block;
-    }
-
-    .carrera .cover p {
-        top: 140px;
-        font-size: 20px;
-    }
-}
 
 h2 {
     margin: 60px 0;
@@ -1162,4 +1146,42 @@ h2 {
 
 .mb-50 {
     margin-bottom: 50px !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .is-3 {
+        flex: none;
+        width: 40%;
+        margin: 0 4.5%;
+        display: inline-table;
+    }
+
+    .columns.is-multiline {
+        display: block;
+    }
+    .no-mobile-flex-container{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .is-3 {
+        flex: none;
+        width: 100%;
+        margin: 0;
+        display: inline-table;
+    }
+
+    .columns.is-multiline {
+        display: block;
+    }
+
+    .carrera .cover p {
+        top: 140px;
+        font-size: 20px;
+    }
+
+    .blue-content {
+        margin: 60px 0 0;
+    }
 }
