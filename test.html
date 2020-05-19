@@ -24,7 +24,7 @@
 
 <div class="container">
   <div class="start-page">
-    <img src="static/test-img/decor-2.png" class="decor2" />
+    <img src="static/test-img/decor-2.png" class="decor2"/>
     <h1>
       ¿Quieres saber <br>
       cuál es tu orientación <br>
@@ -42,13 +42,14 @@
 
     <button class="btn primary" id="btn-start">Empezar</button>
 
-    <img class="decor" src="static/test-img/decor.png" />
+    <img class="decor" src="static/test-img/decor.png"/>
   </div>
 
   <div class="question-page element-inactive-left">
-    <img src="static/test-img/decor-2.png" class="decor2" />
+    <img src="static/test-img/decor-2.png" class="decor2"/>
     <p>
-      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará  una enumeración siguiendo la siguiente pauta:
+      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará una enumeración siguiendo la
+      siguiente pauta:
       <br><br>
       <b>- 01:</b> Absolutamente en desacuerdo<br>
       <b>- 02:</b> Ciertamente de acuerdo (dubitativo)<br>
@@ -67,13 +68,14 @@
 
     <button class="btn action" id="btn-next" disabled>Siguiente</button>
 
-    <img class="decor" src="static/test-img/decor.png" />
+    <img class="decor" src="static/test-img/decor.png"/>
   </div>
 
   <div class="question-page-next element-inactive-left">
-    <img src="static/test-img/decor-2.png" class="decor2" />
+    <img src="static/test-img/decor-2.png" class="decor2"/>
     <p>
-      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará  una enumeración siguiendo la siguiente pauta:
+      A continuación se le presentará 15 ítems de los cuales tendrá que leer y colocará una enumeración siguiendo la
+      siguiente pauta:
       <br><br>
       <b>- 01:</b> Absolutamente en desacuerdo<br>
       <b>- 02:</b> Ciertamente de acuerdo (dubitativo)<br>
@@ -92,169 +94,220 @@
 
     <button class="btn action" id="btn-next-next" disabled>Siguiente</button>
 
-    <img class="decor" src="static/test-img/decor.png" />
+    <img class="decor" src="static/test-img/decor.png"/>
+  </div>
+
+  <div class="form-page element-inactive-left">
+    <h3>Antes de procesar el resultado. Necesitamos unos datos:</h3>
+    <form action="">
+      <div class="input-wrapper">
+        <input type="text" name="nombre" placeholder="Nombre">
+      </div>
+      <div class="input-wrapper">
+        <input type="text" name="apellido" placeholder="Apellido">
+      </div>
+      <select name="grado">
+        <option value="" disabled selected>Grado</option>
+        <option value="4to de secundaria">4to de secundaria</option>
+        <option value="5to de segundaria">5to de segundaria</option>
+      </select>
+      <div class="input-wrapper">
+        <input type="text" name="colegio" placeholder="Colegio">
+      </div>
+      <div class="input-wrapper">
+        <input type="tel" name="celular" placeholder="Celular">
+      </div>
+      <div class="input-wrapper check-box-toggle">
+        <div class="check-box"></div>
+        <p>Acepto <a href="">términos y condiciones y políticas de privacidad.</a></p>
+      </div>
+      <div class="input-wrapper">
+        <button class="btn action" id="send" disabled>Enviar</button>
+      </div>
+    </form>
   </div>
 
   <div class="results-page element-inactive-left">
-    <img src="static/test-img/decor-2.png" class="decor2" />
+    <img src="static/test-img/decor-2.png" class="decor2"/>
     <h1>Perfecto. <br>El resultado del test es el siguiente:</h1>
 
     <h3 id="result-text">Resultado del test</h3>
 
     <button class="btn action" id="back">Volver</button>
 
-    <img class="decor" src="static/test-img/decor.png" />
+    <img class="decor" src="static/test-img/decor.png"/>
   </div>
 </div>
 
 <script src="static/js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script>
-  const startPage = $('.start-page');
-  const resultPage = $('.results-page');
-  const startImage = $('.image.start');
-  const questionImage = $('.image.question');
-  const questionPage = $('.question-page');
-  const questionPageNext = $('.question-page-next');
-  const answer = $('.answer');
-  const btnStart = $('#btn-start');
-  const btnNext = $('#btn-next');
-  const btnBack = $('#back');
-  const btnNextNext = $('#btn-next-next');
-  const btnAction = $('.btn.action');
-  const question1 = $('#question-1');
-  const question2 = $('#question-2');
-  let currentQuestion = 0;
+    const startPage = $('.start-page');
+    const resultPage = $('.results-page');
+    const formPage = $('.form-page');
+    const startImage = $('.image.start');
+    const questionImage = $('.image.question');
+    const questionPage = $('.question-page');
+    const questionPageNext = $('.question-page-next');
+    const answer = $('.answer');
+    const btnStart = $('#btn-start');
+    const btnNext = $('#btn-next');
+    const btnBack = $('#back');
+    const btnSend = $('#send');
+    const btnNextNext = $('#btn-next-next');
+    const btnAction = $('.btn.action');
+    const question1 = $('#question-1');
+    const question2 = $('#question-2');
+    let currentQuestion = 0;
 
-  const questions = [
-      {
-          title: 'Cuando realizo algún trabajo o tarea me gusta hacerlo de manera original de forma diferente a la mayoria de personas.',
-          answer: ''
-      },
-      {
-          title: 'Me interesa saber como se organiza una editorial periodística',
-          answer: ''
-      },
-      {
-          title: 'Me gusta aceptar sugerencias que me hacen compañeros de trabajo y cumplir con responsabilidad las instrucciones recibidas de mis superiores',
-          answer: ''
-      },
-      {
-          title: 'Considero que soy una persona práctica, me gusta ocuparme en trabajos útiles en los que pueda ver pronto los resultados.',
-          answer: ''
-      },
-      {
-          title: 'Me divierten los juegos que requieren "pensamiento analítico": ajedrez, resolver cuestiones de matemáticas, aplicar estrategias, etc.',
-          answer: ''
-      },
-      {
-          title: 'Me gusta manipular herramientas o máquinas y ser capaz de aprovechar todas sus posibilidades.',
-          answer: ''
-      },
-      {
-          title: 'Cuando inicio el conocimiento de un tema nuevo me entusiasma profundizar y no lo dejo hasta que consigo comprenderlo e interpretarlo bien.',
-          answer: ''
-      },
-      {
-          title: 'Me gustaría trabajar en el montaje fotográfico de un diario o revista.',
-          answer: ''
-      },
-      {
-          title: 'Me considero una persona imaginativa, con inspiración, capaz de encontrar soluciones nuevas a los problemas que se presentan.',
-          answer: ''
-      },
-      {
-          title: 'Procuro tener mis cosas bien ordenadas y realizar los trabajos con pulcritud',
-          answer: ''
-      },
-      {
-          title: 'Prefiero las actividades que suponen el contacto con cosas (manipular objetos, utilizar máquinas).',
-          answer: ''
-      },
-      {
-          title: 'Sinceramente, estoy mejor cuando puedo trabajar o estudiar solo/a y puedo concentrarme en lo que hago.',
-          answer: ''
-      },
-      {
-          title: 'No me gusta la falta de estética en carteles o publicaciones.',
-          answer: ''
-      },
-      {
-          title: 'Tengo facilidad para iniciar conversaciones con personas que acabo de conocer y me intereso por sus preferencias o aficiones.',
-          answer: ''
-      },
-      {
-          title: 'A menudo planifico lo que tengo que hacer de manera realista, metódica y detallada. Me gusta las cosas previstas y no actuar al azar o improvisando.',
-          answer: ''
-      },
-  ]
+    const questions = [
+        {
+            title : 'Cuando realizo algún trabajo o tarea me gusta hacerlo de manera original de forma diferente a la mayoria de personas.',
+            answer: ''
+        },
+        {
+            title : 'Me interesa saber como se organiza una editorial periodística',
+            answer: ''
+        },
+        {
+            title : 'Me gusta aceptar sugerencias que me hacen compañeros de trabajo y cumplir con responsabilidad las instrucciones recibidas de mis superiores',
+            answer: ''
+        },
+        {
+            title : 'Considero que soy una persona práctica, me gusta ocuparme en trabajos útiles en los que pueda ver pronto los resultados.',
+            answer: ''
+        },
+        {
+            title : 'Me divierten los juegos que requieren "pensamiento analítico": ajedrez, resolver cuestiones de matemáticas, aplicar estrategias, etc.',
+            answer: ''
+        },
+        {
+            title : 'Me gusta manipular herramientas o máquinas y ser capaz de aprovechar todas sus posibilidades.',
+            answer: ''
+        },
+        {
+            title : 'Cuando inicio el conocimiento de un tema nuevo me entusiasma profundizar y no lo dejo hasta que consigo comprenderlo e interpretarlo bien.',
+            answer: ''
+        },
+        {
+            title : 'Me gustaría trabajar en el montaje fotográfico de un diario o revista.',
+            answer: ''
+        },
+        {
+            title : 'Me considero una persona imaginativa, con inspiración, capaz de encontrar soluciones nuevas a los problemas que se presentan.',
+            answer: ''
+        },
+        {
+            title : 'Procuro tener mis cosas bien ordenadas y realizar los trabajos con pulcritud',
+            answer: ''
+        },
+        {
+            title : 'Prefiero las actividades que suponen el contacto con cosas (manipular objetos, utilizar máquinas).',
+            answer: ''
+        },
+        {
+            title : 'Sinceramente, estoy mejor cuando puedo trabajar o estudiar solo/a y puedo concentrarme en lo que hago.',
+            answer: ''
+        },
+        {
+            title : 'No me gusta la falta de estética en carteles o publicaciones.',
+            answer: ''
+        },
+        {
+            title : 'Tengo facilidad para iniciar conversaciones con personas que acabo de conocer y me intereso por sus preferencias o aficiones.',
+            answer: ''
+        },
+        {
+            title : 'A menudo planifico lo que tengo que hacer de manera realista, metódica y detallada. Me gusta las cosas previstas y no actuar al azar o improvisando.',
+            answer: ''
+        }
+    ];
 
-  const nextQuestion = question => {
-      question.html(questions[currentQuestion].title);
-      currentQuestion++;
-  }
+    const nextQuestion = question => {
+        question.html(questions[currentQuestion].title);
+        currentQuestion++;
+    };
 
-  const startTest = () => {
-      startPage.addClass('element-inactive-left');
-      startImage.addClass('element-inactive-right');
-      questionImage.removeClass('element-inactive-right');
-      questionPage.removeClass('element-inactive-left');
-      nextQuestion(question1);
-  }
+    const startTest = () => {
+        startPage.addClass('element-inactive-left');
+        startImage.addClass('element-inactive-right');
+        questionImage.removeClass('element-inactive-right');
+        questionPage.removeClass('element-inactive-left');
+        nextQuestion(question1);
+    };
 
-  const endTest = () => {
-      btnAction.attr('disabled', false);
-      questionPage.addClass('element-inactive-left');
-      questionPageNext.addClass('element-inactive-left');
-      resultPage.removeClass('element-inactive-left');
-  }
+    const endTest = () => {
+        questionPage.addClass('element-inactive-left');
+        questionPageNext.addClass('element-inactive-left');
+        formPage.removeClass('element-inactive-left');
+    };
 
-  function selectAnswer () {
-      answer.removeClass('selected');
-      btnAction.attr('disabled', false);
-      $(this).addClass('selected');
-      questions[currentQuestion - 1].value = $(this).data('value');
-  }
+    const showResults = () => {
+        formPage.addClass('element-inactive-left');
+        resultPage.removeClass('element-inactive-left');
+    };
 
-  const resetAnswers = () => {
-      answer.removeClass('selected');
-      btnAction.attr('disabled', true);
-  }
+    function selectAnswer () {
+        answer.removeClass('selected');
+        btnAction.attr('disabled', false);
+        $(this).addClass('selected');
+        questions[currentQuestion - 1].value = $(this).data('value');
+    }
 
-  btnStart.click(startTest);
+    const resetAnswers = () => {
+        answer.removeClass('selected');
+        btnAction.attr('disabled', true);
+    };
 
-  answer.click(selectAnswer)
+    btnStart.click(startTest);
 
-  btnNext.click(function () {
-      resetAnswers();
-      if (currentQuestion === questions.length) {
-          endTest();
-      } else {
-          questionPage.addClass('element-inactive-left');
-          questionPageNext.removeClass('element-inactive-left');
-          nextQuestion(question2);
-      }
-  })
+    answer.click(selectAnswer);
 
-  btnNextNext.click(function () {
-      resetAnswers();
-      if (currentQuestion === questions.length) {
-          endTest();
-      } else {
-          questionPage.removeClass('element-inactive-left');
-          questionPageNext.addClass('element-inactive-left');
-          nextQuestion(question1);
-      }
-  })
+    btnNext.click(function () {
+        resetAnswers();
+        if (currentQuestion === questions.length) {
+            endTest();
+        } else {
+            questionPage.addClass('element-inactive-left');
+            questionPageNext.removeClass('element-inactive-left');
+            nextQuestion(question2);
+        }
+    });
 
-  btnBack.click(function () {
-      startPage.removeClass('element-inactive-left');
-      startImage.removeClass('element-inactive-right');
-      questionImage.addClass('element-inactive-right');
-      resultPage.addClass('element-inactive-right');
-      questionPage.addClass('element-inactive-left');
-      questionPageNext.addClass('element-inactive-left');
-      currentQuestion = 0;
-  })
+    btnNextNext.click(function () {
+        resetAnswers();
+        if (currentQuestion === questions.length) {
+            endTest();
+        } else {
+            questionPage.removeClass('element-inactive-left');
+            questionPageNext.addClass('element-inactive-left');
+            nextQuestion(question1);
+        }
+    });
+
+    btnBack.click(function () {
+        startPage.removeClass('element-inactive-left');
+        startImage.removeClass('element-inactive-right');
+        questionImage.addClass('element-inactive-right');
+        resultPage.addClass('element-inactive-right');
+        questionPage.addClass('element-inactive-left');
+        questionPageNext.addClass('element-inactive-left');
+        currentQuestion = 0;
+    });
+
+    $('.check-box-toggle').click(function () {
+        if ($('.check-box').hasClass('active')) {
+            $('.check-box').removeClass('active');
+            $('#send').attr('disabled', true);
+        } else {
+            $('.check-box').addClass('active');
+            $('#send').attr('disabled', false);
+        }
+    });
+
+    btnSend.click(function (e) {
+        e.preventDefault();
+        showResults();
+    });
 
 </script>
 </body>
