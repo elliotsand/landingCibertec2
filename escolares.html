@@ -366,7 +366,7 @@
     <section class="b3">
 
       <section class="mobile-padding">
-        <h2 class="section-title mt-75">Conoce nuestras carreras</h2>
+        <h2 class="section-title">Conoce nuestras carreras</h2>
         <h3 class="section-undertitle" style="padding: 100px 0 0" id="negocios">Escuela de Negocios</h3>
         <div class="line"></div>
         <div class="carreras owl-theme">
@@ -1167,6 +1167,40 @@
             $('.b3-slider').trigger('destroy.owl.carousel');
             $('.b3-slider').addClass('desktop');
             $('.b3-slider').removeClass('owl-carousel');
+        }
+        function sliderOw() {
+            $('.tarjetas').removeClass('desktop')
+            $('.tarjetas').addClass('owl-carousel');
+            $('.tarjetas').owlCarousel({
+                loop: true,
+                margin: 33,
+                nav: true,
+                autoplay: true,
+                navText: ['<span class="icon-flecha2"></span>', '<span class="icon-flecha"></span>'],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    768: {
+                        items: 3
+                    },
+                    960: {
+                        items: 4,
+                    },
+                    1180: {
+                        items: 5
+                    }
+                }
+            })
+        }
+
+        function destroyOw() {
+            $('.tarjetas').trigger('destroy.owl.carousel');
+            $('.tarjetas').addClass('desktop');
+            $('.tarjetas').removeClass('owl-carousel');
         }
 
         if (matchMedia) {
