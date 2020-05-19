@@ -301,7 +301,7 @@ p.article-paragraph {
     color: #fff;
     position: absolute;
     left: 19px;
-    max-width: 210px;
+    max-width: 90%;
     top: 166px;
     line-height: 20px;
     font-size: 23px;
