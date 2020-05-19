@@ -159,7 +159,7 @@
     const question2 = $('#question-2');
     let currentQuestion = 0;
 
-    const points = {
+    let points = {
         r: 0,
         c: 0,
         a: 0,
@@ -350,6 +350,13 @@
         questionPage.addClass('element-inactive-left');
         questionPageNext.addClass('element-inactive-left');
         currentQuestion = 0;
+        points = {
+            r: 0,
+            c: 0,
+            a: 0,
+            s: 0,
+            o: 0
+        }
     });
 
     $('.check-box-toggle').click(function () {
