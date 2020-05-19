@@ -155,7 +155,7 @@
             </div>
           </div>
         </div>
-        <div class="b1-wrap-form desktop">
+        <div class="b1-wrap-form ">
           <div class="b1-bgform" style="background-image: url(static/img/bg-form.jpg);"></div>
 
         </div>
@@ -285,7 +285,7 @@
 
 
               <div class="toogle active color-inver-border" data="uno">
-                <h3 class="section-undertitle color-inver-color">Convenios Nacionales</h3>
+                <h3 class="color-inver-color">Convenios Nacionales</h3>
                 <div class="icon max color-inver-color">+</div>
                 <div class="icon min color-inver-color">-</div>
               </div>
@@ -314,7 +314,7 @@
                 </div>
               </div>
               <div class="toogle  color-inver-border" data="dos">
-                <h3 class="section-undertitle color-inver-color">Convenios Internacionales</h3>
+                <h3 class=" color-inver-color">Convenios Internacionales</h3>
                 <div class="icon max color-inver-color">+</div>
                 <div class="icon min color-inver-color">-</div>
               </div>
@@ -885,42 +885,6 @@
     <!-- CONTENT END -->
   </div>
 
-  <section class="b1 g3-anima">
-    <div class="b1-scroll">
-      <p class="b1-scroll-text">
-        SCROLL DOWN
-      </p>
-      <div class="b1-scroll-image">
-        <img src="static/img/mouse-icon.png" width="20" alt="">
-      </div>
-    </div>
-    <div class="b1-main-form wancho">
-      <div class="b1-inner">
-
-        <div class="b1-content-gracias" style="display: none">
-          <h3 class="b1-title-gracias">¡Gracias!</h3>
-          <p>
-            Nos contactaremos contigo lo antes posible.
-          </p>
-          <p>
-            #DominaLaTecnología
-          </p>
-        </div>
-        <div class="b1-content-form">
-
-        </div>
-
-      </div>
-
-    </div>
-    <div class="b1-content">
-
-      <div class="b1-wrap-form mobile">
-        <div class="b1-bgform" style="background-image: url(static/img/bg-form.jpg);"></div>
-
-      </div>
-    </div>
-  </section>
   <!-- FOOTER START -->
   <footer class="footer">
     <div class="wancho f-main">
@@ -1182,16 +1146,16 @@
                         items: 1
                     },
                     600: {
-                        items: 2
+                        items: 1
                     },
                     768: {
-                        items: 3
+                        items: 2
                     },
                     960: {
-                        items: 4,
+                        items: 3,
                     },
                     1180: {
-                        items: 5
+                        items: 4
                     }
                 }
             })
@@ -1214,6 +1178,9 @@
             if (mq.matches) {
                 $('.b1-inner').appendTo('.b1-wrap-form');
                 console.log('menor a 1024px');
+
+                $('.toogle').removeClass('active');
+                $('.exp').addClass('heightCero');
                 if ($('.b3-slider').hasClass('owl-carousel')) {
                     // console.log('slider, ya existe');
                 } else {
