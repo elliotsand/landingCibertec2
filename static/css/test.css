@@ -301,12 +301,17 @@ input, select {
     }
     .start-page, .question-page, .question-page-next, .results-page, .form-page {
         left: 50%;
-
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) ;
+    }
+    .image.question {
+        display: none;
+    }
+    .element-inactive-left{
+        transform: translate(-200%, -50%);
     }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 480px) {
     .start-page, .question-page, .question-page-next, .results-page, .form-page {
         max-width: 300px;
     }
@@ -317,5 +322,8 @@ input, select {
     }
     .start-page p {
         margin-bottom: 20px;
+    }
+    .btn {
+        max-width: 100%;
     }
 }
