@@ -288,6 +288,7 @@ input, select {
      padding: 23px;
      background-color: #004165;
      color: white;
+     margin-bottom: 15px;
  }
 
  #result-text b {
@@ -378,5 +379,18 @@ input, select {
     }
     .btn {
         max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px 30px !important;
+        height: auto !important;
     }
+}
+
+b.inverted {
+    font-size: 17px  !important;
+    background-color: #42c200;
+    color: white !important;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-top: 10px;
 }

@@ -159,11 +159,22 @@
     }
 
     const results = {
-        r: '<b>INGENIERIA</b><br>Son personas que demuestran interés por actividades prácticas mecánicas, que a menudo exige esfuerzo físico. Prefieren  trabajar con herramientas y objetos. Desean construir cosas y ver resultados prácticos en su trabajo.',
-        c: '<b>TECNOLOGÍA DE LA INFORMACIÓN</b><br>Valoran altamente las matemáticas y reflexionan para comprender procesos lógicos. Tienden a ser personas analíticas, críticas y metódicas',
-        a: '<b>DISEÑO</b><br>Se relacionan con el entorno físico y social utilizando sus sentimiento y su intuición e imaginación. Demuestran interés por actividades creativas.',
-        s: '<b>COMUNICACIONES</b><br>Se relacionan bien con todo tipo de personas, tiene buena habilidad de comunicación interpersonal. Tiene agrado por actividaes ligadas a transmitir información de manera objetiva.',
-        o: '<b>GESTIÓN Y NEGOCIOS</b><br>Prefieren ocupaciones con deberes claramente definidos: tareas de carácter rutinario, actividades verbales o numéricas propias del trabajo de oficina. Son personas ordenadas, sistemáticas y perseverantes.',
+        r: `<b>Perfil Realista</b><br>
+            Demuestras interés por actividades prácticas mecánicas, que a menudo exige esfuerzo físico. Deseas construir cosas y ver resultados prácticos en tu trabajo.
+            <b class="inverted">¡Nuestras carreras de ingeniería son para ti!</b>`,
+        c: `<b>Perfil Intelectual</b><br>
+            Valoras altamente el uso de habilidades matemáticas y reflexionas para comprender procesos lógicos. Tienden a ser personas analíticas, críticas y metódicas
+            <b class="inverted">¡Nuestras carreras en tecnologías de la información son para ti!</b>`,
+        a: `<b>Perfil Artístico</b><br>
+            Te relacionas con el entorno físico y social utilizando sentimientos, intuición e imaginación. Demuestras interés por actividades creativas.
+            <b class="inverted">¡Nuestras carreras de diseño son para ti!</b>`,
+        s: `<b>Perfil Social</b><br>
+            Te relacionas bien con todo tipo de personas y posees habilidad para una comunicación interpersonal fluida.
+            Tienes inclinación por actividades ligadas a transmitir información de manera objetiva.
+            <b class="inverted">¡Nuestras carreras de comunicaciones son para ti!</b>`,
+        o: `<b>Perfil Convencional</b><br>
+            Prefieres ocupaciones con deberes claramente definidos: tareas de carácter frecuente, actividades verbales o numéricas, propias del trabajo de corporativo. Son personas ordenadas, sistemáticas y perseverantes.
+            <b class="inverted">¡Nuestras carreras de gestión y negocios son para ti!</b>`,
     };
 
     const questions = [
@@ -317,7 +328,7 @@
 
     btnNext.click(function () {
         resetAnswers();
-        if (currentQuestion === questions.length) {
+        if (currentQuestion === 2) {
             endTest();
         } else {
             questionPage.addClass('element-inactive-left');
@@ -329,7 +340,7 @@
 
     btnNextNext.click(function () {
         resetAnswers();
-        if (currentQuestion === questions.length) {
+        if (currentQuestion === 2) {
             endTest();
         } else {
             questionPage.removeClass('element-inactive-left');
