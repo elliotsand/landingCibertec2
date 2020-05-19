@@ -328,7 +328,7 @@
 
     btnNext.click(function () {
         resetAnswers();
-        if (currentQuestion === 2) {
+        if (currentQuestion === questions.length) {
             endTest();
         } else {
             questionPage.addClass('element-inactive-left');
@@ -340,7 +340,7 @@
 
     btnNextNext.click(function () {
         resetAnswers();
-        if (currentQuestion === 2) {
+        if (currentQuestion === questions.length) {
             endTest();
         } else {
             questionPage.removeClass('element-inactive-left');
