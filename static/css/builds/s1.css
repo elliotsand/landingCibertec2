@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 .b1 .g0-cnt-btn {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .b1 .owl-leg {
   position: absolute;
@@ -353,7 +353,7 @@
   background-size: cover;
   background-position: center;
   height: calc(100vh - 80px);
-  min-height: 520px;
+  min-height: 560px;
 }
 .b1-inner {
   max-width: 330px;
