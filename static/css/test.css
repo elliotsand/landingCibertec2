@@ -268,15 +268,42 @@ input, select {
     -moz-appearance: none;
     appearance: none;
 }
- #result-text {
-     font-size: 17px;
-     line-height: 27px;
-     padding: 23px;
- }
 
- #result-text b {
-     font-size: 22px;
-     margin-bottom: -11px;
-     display: block;
-     color: #42c200;
- }
+#result-text {
+    font-size: 17px;
+    line-height: 27px;
+    padding: 23px;
+}
+
+#result-text b {
+    font-size: 22px;
+    margin-bottom: -11px;
+    display: block;
+    color: #42c200;
+}
+
+@media screen and (max-width: 1024px) {
+    .image.start {
+        display: none;
+    }
+
+    .green-box {
+        display: none;
+    }
+
+    .bg {
+        width: 100%;
+        max-width: 100%;
+    }
+    .start-page, .question-page, .question-page-next, .results-page, .form-page {
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .start-page, .question-page, .question-page-next, .results-page, .form-page {
+        max-width: 300px;
+    }
+}
