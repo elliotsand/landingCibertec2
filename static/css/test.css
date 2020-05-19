@@ -283,6 +283,10 @@ input, select {
 }
 
 @media screen and (max-width: 1024px) {
+    .logo img {
+        display: block;
+        margin: auto;
+    }
     .image.start {
         display: none;
     }
@@ -302,8 +306,16 @@ input, select {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 580px) {
     .start-page, .question-page, .question-page-next, .results-page, .form-page {
         max-width: 300px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin: 20px 0;
+    }
+    .start-page p {
+        margin-bottom: 20px;
     }
 }
