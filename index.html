@@ -39,6 +39,10 @@
 
 <div class="cnt-wrapper">
   <!-- HEADER START -->
+
+  <div class="cintillo" onclick="gotoForm()">
+    Pre inscríbete Aquí
+  </div>
   <header class="header">
     <div class="wancho">
       <a href="index.html" class="h-logo">
@@ -80,7 +84,7 @@
           </div>
           <div class="b1-content-form">
             <h3 class="b1-title">
-              Solicita más información e inscríbete aquí
+              Pre inscríbete aquí para más información
             </h3>
             <form action="" class="b1-formulario">
               <div class="b1-right">
@@ -1895,6 +1899,24 @@
             }
         });
 
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            //>=, not <=
+            if (scroll >= 100) {
+                //clearHeader, not clearheader - caps H
+                $(".cintillo").addClass("darkHeader");
+            } else {
+
+                $(".cintillo").removeClass("darkHeader");
+            }
+        }); //missing );
+
+        $(".cintillo").click(function () {
+            $('html, body').animate({
+                scrollTop: $(".b1-inner").offset().top - 150
+            }, 500);
+        });
 
     });
 </script>
