@@ -1204,3 +1204,72 @@ h2 {
         margin: auto;
     }
 }
+.cont-nuevas-cartas{
+    display: flex;
+    margin-bottom: 50px;
+}
+.cont-cartas{
+    width: 50%;
+}
+.nuevacarta {
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 480px;
+    margin: auto;
+    padding: 50px 50px 35px;
+    border-radius: 15px;
+    background-position: right;
+}
+.nuevacarta.ben {
+    background-image: url(../img2/fond-ben.png);
+}
+.nuevacarta.bec {
+    background-image: url(../img2/fond-bec.png);
+}
+.cont-item-carta {
+    display: flex;
+    margin: 0 0 15px ;
+}
+.cont-item-carta p{
+    color: #ffffff;
+    font-weight: lighter;
+}
+.cont-item-carta a{
+    text-decoration: underline;
+    font-family: 'BrandonGrotesque-Regular';
+    font-weight: 800;
+}
+.cont-item-carta span{
+    color: #ffffff;
+    font-weight: bold;
+}
+.cont-item-carta .cont-img{
+    margin-right: 20px;
+    min-width: 70px;
+}
+.cont-item-carta img{
+    margin-top: 10px;
+   max-width: 100%;
+}
+
+@media screen and (max-width: 1020px) {
+
+    .cont-nuevas-cartas{
+        display: block;
+    }
+    .cont-cartas{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 489px) {
+
+    .nuevacarta {
+        max-width: 95%;
+        padding: 30px 20px;
+    }
+
+    .cont-item-carta p{
+        font-size: 16px;
+    }
+}
