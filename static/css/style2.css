@@ -25,8 +25,8 @@ button {
 }
 
 .tag {
-    font-size: 23px;
-    margin-bottom: 15px;
+    font-size: 35px;
+    margin-bottom: 25px;
     color: #42c200;
 }
 
@@ -670,7 +670,10 @@ p.article-paragraph {
     .desktop-only {
         display: none;
     }
-
+.tag {
+    max-width: 85%;
+    margin: 30px auto 40px;
+}
     .evento {
         text-align: center;
     }
