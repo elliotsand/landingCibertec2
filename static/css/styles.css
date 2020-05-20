@@ -494,3 +494,23 @@ a:focus {
 .g-text p:first-child {
     margin-top: 0
 }
+
+.cintillo{
+    display: none;
+}
+@media screen and (max-width: 1020px) {
+    .cintillo.darkHeader {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        font-family: 'BrandonGrotesque-Bold', sans-serif;
+        background-color: #42c200;
+        font-size: 20px;
+        box-shadow: -1px -1px 20px #0000008c;
+    }
+}

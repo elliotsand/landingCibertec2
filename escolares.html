@@ -38,6 +38,11 @@
 <!-- html solo para el menu responsive -->
 
 <div class="cnt-wrapper">
+
+  <div class="cintillo" onclick="gotoForm()">
+    Pre inscríbete Aquí
+  </div>
+
   <!-- HEADER START -->
   <header class="header">
     <div class="wancho">
@@ -749,6 +754,25 @@
             }
             ;
         }
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            //>=, not <=
+            if (scroll >= 100) {
+                //clearHeader, not clearheader - caps H
+                $(".cintillo").addClass("darkHeader");
+            } else {
+
+                $(".cintillo").removeClass("darkHeader");
+            }
+        }); //missing );
+
+        $(".cintillo").click(function () {
+            $('html, body').animate({
+                scrollTop: $(".b1-inner").offset().top - 150
+            }, 500);
+        });
 
     });
 </script>
