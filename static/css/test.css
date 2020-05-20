@@ -387,10 +387,11 @@ input, select {
 }
 
 b.inverted {
-    font-size: 17px  !important;
+    font-size: 16px !important;
     background-color: #42c200;
     color: white !important;
     padding: 5px 10px;
     border-radius: 15px;
     margin-top: 10px;
+    text-align: center;
 }
