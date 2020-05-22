@@ -25,9 +25,9 @@ button {
 }
 
 .tag {
-    font-size: 35px;
-    margin-bottom: 25px;
-    color: #42c200;
+    font-size: 35px !important;
+    margin: 0 0 20px !important;
+    color: #004165;
 }
 
 .home {
@@ -1438,7 +1438,8 @@ h2 {
         text-align: center;
         padding: 10px 0;
         font-family: 'BrandonGrotesque-Bold', sans-serif;
-        background-color: #42c200;
+        background-color: #65d800;
+        text-transform: uppercase;
         font-size: 20px;
         box-shadow: -1px -1px 20px #0000008c;
     }

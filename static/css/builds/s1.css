@@ -353,7 +353,7 @@
   background-size: cover;
   background-position: center;
   height: calc(100vh - 80px);
-  min-height: 560px;
+  min-height: 700px;
 }
 .b1-inner {
   max-width: 330px;
